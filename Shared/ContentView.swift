@@ -12,32 +12,79 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pet.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
-
+    private var pets: FetchedResults<Pet>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Pet.name, ascending: true)],
+        predicate: NSPredicate(format: "active = true"),
+        animation: .default)
+    private var pet: FetchedResults<Pet>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Activity.date, ascending: true)],
+        animation: .default)
+    private var activities: FetchedResults<Activity>
+    
+    @State var showPetSheet: Bool = false
+    
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        NavigationView {
+            Form {
+                Section {
+                    if let pet = pet.first {
+                        HStack {
+                            Text(emojiForAnimalType(AnimalType(rawValue: Int(pet.animalType)) ?? .dog))
+                            Divider()
+                            Text(pet.name)
+                        }
+                        Button("Delete") {
+                            print("Deleting pet \(pet.name)")
+                            let petService = PetService(context: viewContext)
+                            petService.delete(pet)
+                        }.foregroundColor(.red)
+                    } else {
+                        Text("None selected")
+                    }
+                    
+                }
+                Section {
+                    Button("Sleep") {
+                        print("Sleep")
+                    }
+                }
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
-
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
+            .navigationTitle("Pet")
+            .sheet(isPresented: $showPetSheet) {
+                PetSheetView(viewModel: PetViewModel(), context: viewContext)
+            }
+            .toolbar {
+                Menu("Pets") {
+                    ForEach(pets) { pet in
+                        Button(action: {
+                            print("Activate pet \(pet.name)")
+                            let petService = PetService(context: viewContext)
+                            petService.activatePet(pet)
+                        }, label: {
+                            if pet.active { Image(systemName: "checkmark") }
+                            Text(pet.name)
+                        })
+                    }
+                    Button(action: {
+                        self.showPetSheet = true
+                    }) {
+                        Label("Add Pet", systemImage: "plus")
+                    }
+                }
             }
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newItem = Pet(context: viewContext)
+            newItem.name = "Zelda"
 
             do {
                 try viewContext.save()
@@ -52,7 +99,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { pets[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -62,6 +109,15 @@ struct ContentView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+    
+    private func emojiForAnimalType(_ type: AnimalType) -> String {
+        switch type {
+        case .cat:
+            return "🐱"
+        case .dog:
+            return "🐶"
         }
     }
 }

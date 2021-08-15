@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81353A6C26C7C18300C1D804 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
+		81353A6D26C7C18300C1D804 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
+		81353A6F26C7C1A900C1D804 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6E26C7C1A800C1D804 /* BaseService.swift */; };
+		81353A7026C7C1A900C1D804 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6E26C7C1A800C1D804 /* BaseService.swift */; };
+		81353A7326C7C37900C1D804 /* PetSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7226C7C37900C1D804 /* PetSheetView.swift */; };
+		81353A7426C7C37900C1D804 /* PetSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7226C7C37900C1D804 /* PetSheetView.swift */; };
+		81353A7826C7F4D300C1D804 /* LabelledFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7726C7F4D300C1D804 /* LabelledFormView.swift */; };
+		81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7726C7F4D300C1D804 /* LabelledFormView.swift */; };
+		81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7A26C7F65400C1D804 /* PetViewModel.swift */; };
+		81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7A26C7F65400C1D804 /* PetViewModel.swift */; };
+		8144717B26C8DB5100CCFA99 /* PetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144717A26C8DB5100CCFA99 /* PetActivityView.swift */; };
+		8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144717A26C8DB5100CCFA99 /* PetActivityView.swift */; };
 		8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */; };
@@ -17,9 +29,23 @@
 		8173895526C40E32003A6722 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893C26C40E30003A6722 /* Persistence.swift */; };
 		8173895626C40E32003A6722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8173893D26C40E32003A6722 /* Assets.xcassets */; };
 		8173895726C40E32003A6722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8173893D26C40E32003A6722 /* Assets.xcassets */; };
+		8173897226C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */; };
+		8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */; };
+		8173897426C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */; };
+		8173897526C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */; };
+		8173897626C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
+		8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
+		8173897B26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81353A6B26C7C18300C1D804 /* PetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetService.swift; sourceTree = "<group>"; };
+		81353A6E26C7C1A800C1D804 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		81353A7226C7C37900C1D804 /* PetSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSheetView.swift; sourceTree = "<group>"; };
+		81353A7726C7F4D300C1D804 /* LabelledFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledFormView.swift; sourceTree = "<group>"; };
+		81353A7A26C7F65400C1D804 /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
+		8144717A26C8DB5100CCFA99 /* PetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivityView.swift; sourceTree = "<group>"; };
 		8173893926C40E30003A6722 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySleepTrackerApp.swift; sourceTree = "<group>"; };
 		8173893B26C40E30003A6722 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +56,10 @@
 		8173894A26C40E32003A6722 /* PuppySleepTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppySleepTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8173894C26C40E32003A6722 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8173894D26C40E32003A6722 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +80,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81353A6926C7C14F00C1D804 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */,
+				8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */,
+				8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */,
+				8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81353A6A26C7C17500C1D804 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				81353A6B26C7C18300C1D804 /* PetService.swift */,
+				81353A6E26C7C1A800C1D804 /* BaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		81353A7126C7C36500C1D804 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				81353A7626C7F4C600C1D804 /* ViewComponents */,
+				81353A7226C7C37900C1D804 /* PetSheetView.swift */,
+				8144717A26C8DB5100CCFA99 /* PetActivityView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81353A7526C7C68700C1D804 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				81353A7A26C7F65400C1D804 /* PetViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		81353A7626C7F4C600C1D804 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				81353A7726C7F4D300C1D804 /* LabelledFormView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		8173893226C40E30003A6722 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +139,9 @@
 		8173893726C40E30003A6722 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				81353A7526C7C68700C1D804 /* ViewModels */,
+				81353A7126C7C36500C1D804 /* Views */,
+				8173896D26C40F5B003A6722 /* CoreData */,
 				8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */,
 				8173893B26C40E30003A6722 /* ContentView.swift */,
 				8173893C26C40E30003A6722 /* Persistence.swift */,
@@ -96,6 +175,15 @@
 				8173894D26C40E32003A6722 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8173896D26C40F5B003A6722 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				81353A6A26C7C17500C1D804 /* Services */,
+				81353A6926C7C14F00C1D804 /* Models */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +286,17 @@
 				8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				8173895426C40E32003A6722 /* Persistence.swift in Sources */,
 				8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
+				81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */,
+				81353A6C26C7C18300C1D804 /* PetService.swift in Sources */,
+				8173897426C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
+				8173897626C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
+				81353A7326C7C37900C1D804 /* PetSheetView.swift in Sources */,
 				8173895226C40E32003A6722 /* ContentView.swift in Sources */,
+				8144717B26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
+				8173897226C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
+				81353A7826C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
+				81353A6F26C7C1A900C1D804 /* BaseService.swift in Sources */,
+				8173897B26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +307,17 @@
 				8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				8173895526C40E32003A6722 /* Persistence.swift in Sources */,
 				8173895126C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
+				81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */,
+				81353A6D26C7C18300C1D804 /* PetService.swift in Sources */,
+				8173897526C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
+				8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
+				81353A7426C7C37900C1D804 /* PetSheetView.swift in Sources */,
 				8173895326C40E32003A6722 /* ContentView.swift in Sources */,
+				8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
+				8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
+				81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
+				81353A7026C7C1A900C1D804 /* BaseService.swift in Sources */,
+				8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

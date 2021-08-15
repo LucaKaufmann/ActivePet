@@ -13,10 +13,18 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        let pet = Pet(context: viewContext)
+        pet.name = "Zelda"
+        pet.animalType = 0
+        
+        let activity1 = Activity(context: viewContext)
+        activity1.activityType = "sleep"
+        activity1.date = Date()
+        
+        let activity2 = Activity(context: viewContext)
+        activity2.activityType = "poop"
+        activity2.date = Date()
+        
         do {
             try viewContext.save()
         } catch {
@@ -35,6 +43,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
+
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
