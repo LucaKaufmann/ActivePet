@@ -37,6 +37,12 @@
 		8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
 		8173897B26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
 		8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		81D6A85026C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
+		81D6A85126C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
+		81D6A85426C91080002E238B /* ActivityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85326C91080002E238B /* ActivityRow.swift */; };
+		81D6A85526C91080002E238B /* ActivityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85326C91080002E238B /* ActivityRow.swift */; };
+		81D6A85E26CAC5D4002E238B /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85D26CAC5D4002E238B /* BlueButton.swift */; };
+		81D6A85F26CAC5D4002E238B /* BlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85D26CAC5D4002E238B /* BlueButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +66,9 @@
 		8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81D6A84F26C90563002E238B /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		81D6A85326C91080002E238B /* ActivityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRow.swift; sourceTree = "<group>"; };
+		81D6A85D26CAC5D4002E238B /* BlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			children = (
 				81353A6B26C7C18300C1D804 /* PetService.swift */,
 				81353A6E26C7C1A800C1D804 /* BaseService.swift */,
+				81D6A84F26C90563002E238B /* ActivityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -103,9 +113,10 @@
 		81353A7126C7C36500C1D804 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				81D6A85C26CAC5C2002E238B /* ViewModifiers */,
+				81D6A85226C91074002E238B /* Activity */,
 				81353A7626C7F4C600C1D804 /* ViewComponents */,
 				81353A7226C7C37900C1D804 /* PetSheetView.swift */,
-				8144717A26C8DB5100CCFA99 /* PetActivityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +195,23 @@
 				81353A6926C7C14F00C1D804 /* Models */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		81D6A85226C91074002E238B /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				81D6A85326C91080002E238B /* ActivityRow.swift */,
+				8144717A26C8DB5100CCFA99 /* PetActivityView.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		81D6A85C26CAC5C2002E238B /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				81D6A85D26CAC5D4002E238B /* BlueButton.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,15 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
+				81D6A85426C91080002E238B /* ActivityRow.swift in Sources */,
 				8173895426C40E32003A6722 /* Persistence.swift in Sources */,
 				8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6C26C7C18300C1D804 /* PetService.swift in Sources */,
 				8173897426C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
 				8173897626C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
+				81D6A85E26CAC5D4002E238B /* BlueButton.swift in Sources */,
 				81353A7326C7C37900C1D804 /* PetSheetView.swift in Sources */,
 				8173895226C40E32003A6722 /* ContentView.swift in Sources */,
 				8144717B26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
+				81D6A85026C90563002E238B /* ActivityService.swift in Sources */,
 				8173897226C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
 				81353A7826C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
 				81353A6F26C7C1A900C1D804 /* BaseService.swift in Sources */,
@@ -305,15 +336,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
+				81D6A85526C91080002E238B /* ActivityRow.swift in Sources */,
 				8173895526C40E32003A6722 /* Persistence.swift in Sources */,
 				8173895126C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6D26C7C18300C1D804 /* PetService.swift in Sources */,
 				8173897526C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
 				8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
+				81D6A85F26CAC5D4002E238B /* BlueButton.swift in Sources */,
 				81353A7426C7C37900C1D804 /* PetSheetView.swift in Sources */,
 				8173895326C40E32003A6722 /* ContentView.swift in Sources */,
 				8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
+				81D6A85126C90563002E238B /* ActivityService.swift in Sources */,
 				8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
 				81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
 				81353A7026C7C1A900C1D804 /* BaseService.swift in Sources */,

@@ -20,10 +20,12 @@ struct PersistenceController {
         let activity1 = Activity(context: viewContext)
         activity1.activityType = "sleep"
         activity1.date = Date()
+        activity1.pet = pet
         
         let activity2 = Activity(context: viewContext)
         activity2.activityType = "poop"
         activity2.date = Date()
+        activity2.pet = pet
         
         do {
             try viewContext.save()

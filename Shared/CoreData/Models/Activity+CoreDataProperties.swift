@@ -17,7 +17,7 @@ extension Activity {
     }
 
     @NSManaged public var date: Date
-    @NSManaged public var endDate: Date
+    @NSManaged public var endDate: Date?
     @NSManaged public var activityType: String
     @NSManaged public var notes: String
     @NSManaged public var pet: Pet
