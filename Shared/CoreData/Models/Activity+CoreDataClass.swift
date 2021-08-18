@@ -21,7 +21,7 @@ public class Activity: NSManagedObject {
     
     var formattedEndDate: String {
         guard let date = self.endDate else {
-            return "?"
+            return ""
         }
         return formattedDate(date)
     }

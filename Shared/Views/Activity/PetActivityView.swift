@@ -19,7 +19,7 @@ struct PetActivityView: View {
     init(pet: Pet) {
 //        self.activities = Array(activities as? Set<Activity> ?? [])
         self.pet = pet
-        self.activitiesRequest = FetchRequest(entity: Activity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Activity.date, ascending: true)], predicate: NSPredicate(format: "pet == %@", pet))
+        self.activitiesRequest = FetchRequest(entity: Activity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Activity.date, ascending: false)], predicate: NSPredicate(format: "pet == %@", pet))
     }
     
     var body: some View {
@@ -28,17 +28,17 @@ struct PetActivityView: View {
                 Button("🛏 Sleep") {
                     setActivity("sleep")
                 }
-                .buttonStyle(BlueButton(isActive: isSleepActive()))
+                .buttonStyle(RoundedButton(isActive: isSleepActive()))
                 
                 Button("🧸 Play") {
                     setActivity("play")
                 }
-                .buttonStyle(BlueButton(isActive: isPlayActive()))
+                .buttonStyle(RoundedButton(isActive: isPlayActive()))
                 
                 Button("🦮 Walk") {
                     setActivity("walk")
                 }
-                .buttonStyle(BlueButton(isActive: isWalkActive()))
+                .buttonStyle(RoundedButton(isActive: isWalkActive()))
 
             }.padding(.vertical)
 //            ForEach(Array(pet.activities as? Set<Activity> ?? []), id: \.self){ activity in

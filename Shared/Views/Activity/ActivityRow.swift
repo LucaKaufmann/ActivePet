@@ -12,13 +12,8 @@ struct ActivityRow: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @ObservedObject var activity: Activity
-    
-    @State var isTimerRunning = false
-    @State private var startTime =  Date()
-    @State var interval = TimeInterval()
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+
+    @State var isLinkActive = false
     @State var formatter: DateComponentsFormatter = {
           let formatter = DateComponentsFormatter()
           formatter.allowedUnits = [.hour, .minute, .second]
@@ -27,23 +22,27 @@ struct ActivityRow: View {
           return formatter
       }()
     
-    @State var isLinkActive = false
-    
     var body: some View {
             HStack {
                 Text(activity.emojiForType()).padding(.horizontal)
                 Divider()
                 NavigationLink(destination: ActivityEditView(viewModel: ActivityViewModel(activity: activity))) {
                     VStack(alignment: .leading) {
-                        Text("\(activity.formattedStartDate) - \(activity.formattedEndDate)")
+                        HStack {
+                            Text("\(activity.formattedStartDate) - \(activity.formattedEndDate)")
+                            if activity.isActive() {
+                                ActivitySpinnerView().frame(width: 15, height: 15)
+                            }
+                        }
                         if activity.isActive() {
-                            Text(formatter.string(from: interval) ?? "")
-                                .font(Font.system(size: 12, design: .monospaced))
-                                        .onReceive(timer) { _ in
-                                            if self.isTimerRunning && !activity.isFault{
-                                                interval = Date().timeIntervalSince(activity.date)
-                                            }
-                                        }
+                            TimerView(isTimerRunning: true, startTime: activity.date)
+//                            Text(formatter.string(from: interval) ?? "")
+//                                .font(Font.system(size: 12, design: .monospaced))
+//                                        .onReceive(timer) { _ in
+//                                            if self.isTimerRunning && !activity.isFault{
+//                                                interval = Date().timeIntervalSince(activity.date)
+//                                            }
+//                                        }
                         } else {
                             if let endDate = activity.endDate {
                                 Text(formatter.string(from: endDate.timeIntervalSince(activity.date)) ?? "")
@@ -62,11 +61,11 @@ struct ActivityRow: View {
 //                    }.padding(.horizontal)
 //                } 
             }
-        .onAppear() {
-            if activity.isActive() && !isTimerRunning {
-                isTimerRunning.toggle()
-            }
-        }
+//        .onAppear() {
+//            if activity.isActive() && !isTimerRunning {
+//                isTimerRunning.toggle()
+//            }
+//        }
     }
     
 }
