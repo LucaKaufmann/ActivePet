@@ -51,20 +51,7 @@ struct ContentView: View {
                 }
                 if let pet = pet.first {
                     Section {
-                        HStack {
-                            Button("🛏 Sleep") {
-                                addActivity("sleep")
-                            }.buttonStyle(BlueButton())
-                            Button("🧸 Play") {
-                                addActivity("play")
-                            }.buttonStyle(BlueButton())
-                            Button("🦮 Walk") {
-                                addActivity("walk")
-                            }.buttonStyle(BlueButton())
-                        }
-                    }
-                    Section {
-                        PetActivityView(predicate: NSPredicate(format: "pet == %@", pet))
+                        PetActivityView(pet: pet)
                     }
                 }
             }
@@ -92,17 +79,6 @@ struct ContentView: View {
                 }
             }
         }
-    }
-    
-    private func addActivity(_ type: String) {
-        guard let selectedPet = pet.first else {
-            return
-        }
-        let activityService = ActivityService(context: viewContext)
-        let newActivity = activityService.create(type: type, date: Date())
-        newActivity.pet = selectedPet
-        
-        try? viewContext.save()
     }
 
     private func addItem() {

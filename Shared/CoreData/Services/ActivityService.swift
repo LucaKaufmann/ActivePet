@@ -27,6 +27,20 @@ struct ActivityService {
         activity.date = date
         return activity
     }
+    
+    func getActiveActivityFor(pet: Pet, type: String) -> Activity? {
+        let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "pet == %@ AND activityType == %@ AND endDate == nil", pet, type)
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first
+            
+        } catch let error as NSError {
+            print("Error fetching subFavorite \(error)")
+            return nil
+        }
+    }
 }
 
 

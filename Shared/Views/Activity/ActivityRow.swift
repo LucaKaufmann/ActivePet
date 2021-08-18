@@ -16,6 +16,7 @@ struct ActivityRow: View {
     @State var isTimerRunning = false
     @State private var startTime =  Date()
     @State var interval = TimeInterval()
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @State var formatter: DateComponentsFormatter = {
@@ -26,36 +27,40 @@ struct ActivityRow: View {
           return formatter
       }()
     
+    @State var isLinkActive = false
+    
     var body: some View {
             HStack {
                 Text(activity.emojiForType()).padding(.horizontal)
                 Divider()
-                VStack(alignment: .leading) {
-                    Text("\(activity.formattedStartDate) - \(activity.formattedEndDate)")
-                    if activity.isActive() {
-                        Text(formatter.string(from: interval) ?? "")
-                            .font(Font.system(size: 12, design: .monospaced))
-                                    .onReceive(timer) { _ in
-                                        if self.isTimerRunning && !activity.isFault{
-                                            interval = Date().timeIntervalSince(activity.date)
-                                        }
-                                    }
-                    } else {
-                        if let endDate = activity.endDate {
-                            Text(formatter.string(from: endDate.timeIntervalSince(activity.date)) ?? "")
+                NavigationLink(destination: ActivityEditView(viewModel: ActivityViewModel(activity: activity))) {
+                    VStack(alignment: .leading) {
+                        Text("\(activity.formattedStartDate) - \(activity.formattedEndDate)")
+                        if activity.isActive() {
+                            Text(formatter.string(from: interval) ?? "")
                                 .font(Font.system(size: 12, design: .monospaced))
+                                        .onReceive(timer) { _ in
+                                            if self.isTimerRunning && !activity.isFault{
+                                                interval = Date().timeIntervalSince(activity.date)
+                                            }
+                                        }
+                        } else {
+                            if let endDate = activity.endDate {
+                                Text(formatter.string(from: endDate.timeIntervalSince(activity.date)) ?? "")
+                                    .font(Font.system(size: 12, design: .monospaced))
+                            }
                         }
                     }
                 }
                 Spacer()
-                if activity.isActive() {
-                    Divider()
-                    Button("🛑") {
-                        activity.endDate = Date()
-                        isTimerRunning.toggle()
-                        try? viewContext.save()
-                    }.padding(.horizontal)
-                } 
+//                if activity.isActive() {
+//                    Divider()
+//                    Button("🛑") {
+//                        activity.endDate = Date()
+//                        isTimerRunning.toggle()
+//                        try? viewContext.save()
+//                    }.padding(.horizontal)
+//                } 
             }
         .onAppear() {
             if activity.isActive() && !isTimerRunning {
@@ -82,8 +87,12 @@ struct ActivityRow_Previews: PreviewProvider {
             activity2.endDate = Date()
             try? PersistenceController.preview.container.viewContext.save()
         return Group {
-            ActivityRow(activity: activity1).previewLayout(PreviewLayout.fixed(width: 360, height: 60))
-            ActivityRow(activity: activity2).previewLayout(PreviewLayout.fixed(width: 360, height: 60))
+            NavigationView {
+                ActivityRow(activity: activity1).previewLayout(PreviewLayout.fixed(width: 360, height: 60))
+            }
+            NavigationView {
+                ActivityRow(activity: activity2).previewLayout(PreviewLayout.fixed(width: 360, height: 60))
+            }
         }
 //        }
     }
