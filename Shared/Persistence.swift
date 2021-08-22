@@ -46,7 +46,9 @@ struct PersistenceController {
         var persistentStoreDescription = container.persistentStoreDescriptions.first
         
         if inMemory {
-            persistentStoreDescription?.url = URL(fileURLWithPath: "/dev/null")
+          persistentStoreDescription?.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            persistentStoreDescription?.url = URL.storeURL(for: "group.puppysleeptracker", databaseName: "PuppySleepTracker")
         }
         
         persistentStoreDescription?.setOption(true as NSNumber, forKey: "NSMigratePersistentStoresAutomaticallyOption")

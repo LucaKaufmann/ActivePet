@@ -26,6 +26,18 @@ struct PetService {
         }
     }
     
+    func getPets() -> [Pet] {
+        let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result
+        } catch let error as NSError {
+            print("Error fetching pets \(error)")
+            return []
+        }
+    }
+    
     func delete(_ pet: Pet) {
         context.delete(pet)
         do {

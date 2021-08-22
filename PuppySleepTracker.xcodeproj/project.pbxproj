@@ -47,6 +47,43 @@
 		8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
 		8173897B26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
 		8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		81B9E2E826D248FF00954820 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9E2E726D248FF00954820 /* WidgetKit.framework */; };
+		81B9E2EA26D248FF00954820 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9E2E926D248FF00954820 /* SwiftUI.framework */; };
+		81B9E2ED26D248FF00954820 /* PuppySleepTrackerWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EC26D248FF00954820 /* PuppySleepTrackerWidgets.swift */; };
+		81B9E2F026D2490100954820 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B9E2EF26D2490100954820 /* Assets.xcassets */; };
+		81B9E2F226D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */; };
+		81B9E2F326D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */; };
+		81B9E2F626D2490100954820 /* PuppySleepTrackerWidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81B9E2E526D248FF00954820 /* PuppySleepTrackerWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		81B9E2FB26D2496C00954820 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
+		81B9E2FC26D2496F00954820 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
+		81B9E2FD26D24C0900954820 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */; };
+		81B9E2FE26D24C0C00954820 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
+		81B9E2FF26D24F9400954820 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893C26C40E30003A6722 /* Persistence.swift */; };
+		81B9E30026D24FD500954820 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		81B9E30126D24FD700954820 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */; };
+		81B9E30626D2562A00954820 /* URL+storeUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30526D2562A00954820 /* URL+storeUrl.swift */; };
+		81B9E30726D2566A00954820 /* URL+storeUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30526D2562A00954820 /* URL+storeUrl.swift */; };
+		81B9E30826D2566C00954820 /* URL+storeUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30526D2562A00954820 /* URL+storeUrl.swift */; };
+		81B9E30A26D282C900954820 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30926D282C900954820 /* OSLog.swift */; };
+		81B9E30B26D282F200954820 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30926D282C900954820 /* OSLog.swift */; };
+		81B9E30C26D282F200954820 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30926D282C900954820 /* OSLog.swift */; };
+		81B9E30D26D283FE00954820 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
+		81B9E31426D28A6B00954820 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9E31326D28A6B00954820 /* Intents.framework */; };
+		81B9E31726D28A6B00954820 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E31626D28A6B00954820 /* IntentHandler.swift */; };
+		81B9E32C26D28A6C00954820 /* PuppySleepTrackerIntents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 81B9E31226D28A6B00954820 /* PuppySleepTrackerIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		81B9E33426D28B0900954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */; };
+		81B9E33526D28BC300954820 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893C26C40E30003A6722 /* Persistence.swift */; };
+		81B9E33626D28BC600954820 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6E26C7C1A800C1D804 /* BaseService.swift */; };
+		81B9E33726D28BC900954820 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6E26C7C1A800C1D804 /* BaseService.swift */; };
+		81B9E33826D28BCB00954820 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
+		81B9E33926D28BCD00954820 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
+		81B9E33A26D28BD000954820 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		81B9E33B26D28BD200954820 /* Pet+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896E26C40F5B003A6722 /* Pet+CoreDataClass.swift */; };
+		81B9E33C26D28BD400954820 /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */; };
+		81B9E33D26D28BD600954820 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
+		81B9E33F26D28C9F00954820 /* IntentPet+Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */; };
+		81B9E34026D28E6500954820 /* URL+storeUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30526D2562A00954820 /* URL+storeUrl.swift */; };
+		81B9E34126D28F4400954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */; };
 		81D6A85026C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
 		81D6A85126C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
 		81D6A85426C91080002E238B /* ActivityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85326C91080002E238B /* ActivityRow.swift */; };
@@ -54,6 +91,38 @@
 		81D6A85E26CAC5D4002E238B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85D26CAC5D4002E238B /* RoundedButton.swift */; };
 		81D6A85F26CAC5D4002E238B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85D26CAC5D4002E238B /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		81B9E2F426D2490100954820 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8173893326C40E30003A6722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B9E2E426D248FF00954820;
+			remoteInfo = PuppySleepTrackerWidgetsExtension;
+		};
+		81B9E32A26D28A6C00954820 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8173893326C40E30003A6722 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81B9E31126D28A6B00954820;
+			remoteInfo = PuppySleepTrackerIntents;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		81B9E2F726D2490100954820 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				81B9E32C26D28A6C00954820 /* PuppySleepTrackerIntents.appex in Embed App Extensions */,
+				81B9E2F626D2490100954820 /* PuppySleepTrackerWidgetsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		810356AE26CBE1DC00370CB7 /* ActivityEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEditView.swift; sourceTree = "<group>"; };
@@ -82,6 +151,24 @@
 		8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81B9E2E526D248FF00954820 /* PuppySleepTrackerWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PuppySleepTrackerWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B9E2E726D248FF00954820 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		81B9E2E926D248FF00954820 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		81B9E2EC26D248FF00954820 /* PuppySleepTrackerWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySleepTrackerWidgets.swift; sourceTree = "<group>"; };
+		81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PuppySleepTrackerWidgets.intentdefinition; sourceTree = "<group>"; };
+		81B9E2EF26D2490100954820 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		81B9E2F126D2490100954820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B9E30226D2522700954820 /* PuppySleepTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PuppySleepTracker.entitlements; sourceTree = "<group>"; };
+		81B9E30326D2523B00954820 /* PuppySleepTrackerWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PuppySleepTrackerWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		81B9E30526D2562A00954820 /* URL+storeUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+storeUrl.swift"; sourceTree = "<group>"; };
+		81B9E30926D282C900954820 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		81B9E31226D28A6B00954820 /* PuppySleepTrackerIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PuppySleepTrackerIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		81B9E31326D28A6B00954820 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		81B9E31626D28A6B00954820 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		81B9E31826D28A6B00954820 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81B9E31E26D28A6B00954820 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
+		81B9E33326D28A8A00954820 /* PuppySleepTrackerIntents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PuppySleepTrackerIntents.entitlements; sourceTree = "<group>"; };
+		81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntentPet+Pet.swift"; sourceTree = "<group>"; };
 		81D6A84F26C90563002E238B /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
 		81D6A85326C91080002E238B /* ActivityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRow.swift; sourceTree = "<group>"; };
 		81D6A85D26CAC5D4002E238B /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -99,6 +186,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B9E2E226D248FF00954820 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B9E2EA26D248FF00954820 /* SwiftUI.framework in Frameworks */,
+				81B9E2E826D248FF00954820 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B9E30F26D28A6B00954820 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B9E31426D28A6B00954820 /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,9 +264,14 @@
 		8173893226C40E30003A6722 = {
 			isa = PBXGroup;
 			children = (
+				81B9E30226D2522700954820 /* PuppySleepTracker.entitlements */,
+				81B9E30326D2523B00954820 /* PuppySleepTrackerWidgetsExtension.entitlements */,
 				8173893726C40E30003A6722 /* Shared */,
 				8173894426C40E32003A6722 /* iOS */,
 				8173894B26C40E32003A6722 /* macOS */,
+				81B9E2EB26D248FF00954820 /* PuppySleepTrackerWidgets */,
+				81B9E31526D28A6B00954820 /* PuppySleepTrackerIntents */,
+				81B9E2E626D248FF00954820 /* Frameworks */,
 				8173894326C40E32003A6722 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,6 +279,7 @@
 		8173893726C40E30003A6722 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				81B9E30426D2561C00954820 /* Extensions */,
 				81353A7526C7C68700C1D804 /* ViewModels */,
 				81353A7126C7C36500C1D804 /* Views */,
 				8173896D26C40F5B003A6722 /* CoreData */,
@@ -187,6 +297,8 @@
 			children = (
 				8173894226C40E32003A6722 /* PuppySleepTracker.app */,
 				8173894A26C40E32003A6722 /* PuppySleepTracker.app */,
+				81B9E2E526D248FF00954820 /* PuppySleepTrackerWidgetsExtension.appex */,
+				81B9E31226D28A6B00954820 /* PuppySleepTrackerIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +330,48 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		81B9E2E626D248FF00954820 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81B9E2E726D248FF00954820 /* WidgetKit.framework */,
+				81B9E2E926D248FF00954820 /* SwiftUI.framework */,
+				81B9E31326D28A6B00954820 /* Intents.framework */,
+				81B9E31E26D28A6B00954820 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		81B9E2EB26D248FF00954820 /* PuppySleepTrackerWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				81B9E2EC26D248FF00954820 /* PuppySleepTrackerWidgets.swift */,
+				81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */,
+				81B9E2EF26D2490100954820 /* Assets.xcassets */,
+				81B9E2F126D2490100954820 /* Info.plist */,
+			);
+			path = PuppySleepTrackerWidgets;
+			sourceTree = "<group>";
+		};
+		81B9E30426D2561C00954820 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				81B9E30526D2562A00954820 /* URL+storeUrl.swift */,
+				81B9E30926D282C900954820 /* OSLog.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		81B9E31526D28A6B00954820 /* PuppySleepTrackerIntents */ = {
+			isa = PBXGroup;
+			children = (
+				81B9E33326D28A8A00954820 /* PuppySleepTrackerIntents.entitlements */,
+				81B9E31626D28A6B00954820 /* IntentHandler.swift */,
+				81B9E31826D28A6B00954820 /* Info.plist */,
+				81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */,
+			);
+			path = PuppySleepTrackerIntents;
+			sourceTree = "<group>";
+		};
 		81D6A85226C91074002E238B /* Activity */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,10 +400,13 @@
 				8173893E26C40E32003A6722 /* Sources */,
 				8173893F26C40E32003A6722 /* Frameworks */,
 				8173894026C40E32003A6722 /* Resources */,
+				81B9E2F726D2490100954820 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				81B9E2F526D2490100954820 /* PBXTargetDependency */,
+				81B9E32B26D28A6C00954820 /* PBXTargetDependency */,
 			);
 			name = "PuppySleepTracker (iOS)";
 			productName = "PuppySleepTracker (iOS)";
@@ -273,6 +430,40 @@
 			productReference = 8173894A26C40E32003A6722 /* PuppySleepTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		81B9E2E426D248FF00954820 /* PuppySleepTrackerWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B9E2FA26D2490100954820 /* Build configuration list for PBXNativeTarget "PuppySleepTrackerWidgetsExtension" */;
+			buildPhases = (
+				81B9E2E126D248FF00954820 /* Sources */,
+				81B9E2E226D248FF00954820 /* Frameworks */,
+				81B9E2E326D248FF00954820 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuppySleepTrackerWidgetsExtension;
+			productName = PuppySleepTrackerWidgetsExtension;
+			productReference = 81B9E2E526D248FF00954820 /* PuppySleepTrackerWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		81B9E31126D28A6B00954820 /* PuppySleepTrackerIntents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 81B9E33026D28A6C00954820 /* Build configuration list for PBXNativeTarget "PuppySleepTrackerIntents" */;
+			buildPhases = (
+				81B9E30E26D28A6B00954820 /* Sources */,
+				81B9E30F26D28A6B00954820 /* Frameworks */,
+				81B9E31026D28A6B00954820 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PuppySleepTrackerIntents;
+			productName = PuppySleepTrackerIntents;
+			productReference = 81B9E31226D28A6B00954820 /* PuppySleepTrackerIntents.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,6 +477,12 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					8173894926C40E32003A6722 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					81B9E2E426D248FF00954820 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					81B9E31126D28A6B00954820 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
@@ -305,6 +502,8 @@
 			targets = (
 				8173894126C40E32003A6722 /* PuppySleepTracker (iOS) */,
 				8173894926C40E32003A6722 /* PuppySleepTracker (macOS) */,
+				81B9E2E426D248FF00954820 /* PuppySleepTrackerWidgetsExtension */,
+				81B9E31126D28A6B00954820 /* PuppySleepTrackerIntents */,
 			);
 		};
 /* End PBXProject section */
@@ -326,6 +525,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81B9E2E326D248FF00954820 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B9E2F026D2490100954820 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B9E31026D28A6B00954820 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -339,10 +553,13 @@
 				8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6C26C7C18300C1D804 /* PetService.swift in Sources */,
+				81B9E2F326D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
 				810356BB26CCCFD800370CB7 /* TimerView.swift in Sources */,
 				810356B826CCCA7E00370CB7 /* ActivitySpinnerView.swift in Sources */,
+				81B9E30A26D282C900954820 /* OSLog.swift in Sources */,
 				8173897426C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
 				810356AF26CBE1DC00370CB7 /* ActivityEditView.swift in Sources */,
+				81B9E30626D2562A00954820 /* URL+storeUrl.swift in Sources */,
 				8173897626C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
 				81D6A85E26CAC5D4002E238B /* RoundedButton.swift in Sources */,
 				810356B226CBE23600370CB7 /* ActivityViewModel.swift in Sources */,
@@ -364,7 +581,9 @@
 			files = (
 				8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				81D6A85526C91080002E238B /* ActivityRow.swift in Sources */,
+				81B9E30B26D282F200954820 /* OSLog.swift in Sources */,
 				8173895526C40E32003A6722 /* Persistence.swift in Sources */,
+				81B9E30726D2566A00954820 /* URL+storeUrl.swift in Sources */,
 				8173895126C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6D26C7C18300C1D804 /* PetService.swift in Sources */,
@@ -382,12 +601,65 @@
 				8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
 				81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
 				81353A7026C7C1A900C1D804 /* BaseService.swift in Sources */,
+				81B9E34126D28F4400954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
 				8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */,
 				810356BE26CD239400370CB7 /* FormTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81B9E2E126D248FF00954820 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B9E2F226D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
+				81B9E30D26D283FE00954820 /* PuppySleepTracker.xcdatamodeld in Sources */,
+				81B9E2FD26D24C0900954820 /* Activity+CoreDataClass.swift in Sources */,
+				81B9E2FE26D24C0C00954820 /* Activity+CoreDataProperties.swift in Sources */,
+				81B9E30026D24FD500954820 /* Pet+CoreDataProperties.swift in Sources */,
+				81B9E30C26D282F200954820 /* OSLog.swift in Sources */,
+				81B9E2FF26D24F9400954820 /* Persistence.swift in Sources */,
+				81B9E33726D28BC900954820 /* BaseService.swift in Sources */,
+				81B9E30826D2566C00954820 /* URL+storeUrl.swift in Sources */,
+				81B9E2FC26D2496F00954820 /* PetService.swift in Sources */,
+				81B9E2FB26D2496C00954820 /* ActivityService.swift in Sources */,
+				81B9E2ED26D248FF00954820 /* PuppySleepTrackerWidgets.swift in Sources */,
+				81B9E30126D24FD700954820 /* Pet+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81B9E30E26D28A6B00954820 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81B9E33626D28BC600954820 /* BaseService.swift in Sources */,
+				81B9E33A26D28BD000954820 /* Pet+CoreDataProperties.swift in Sources */,
+				81B9E33D26D28BD600954820 /* Activity+CoreDataProperties.swift in Sources */,
+				81B9E33526D28BC300954820 /* Persistence.swift in Sources */,
+				81B9E33426D28B0900954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
+				81B9E33C26D28BD400954820 /* Activity+CoreDataClass.swift in Sources */,
+				81B9E31726D28A6B00954820 /* IntentHandler.swift in Sources */,
+				81B9E33F26D28C9F00954820 /* IntentPet+Pet.swift in Sources */,
+				81B9E33926D28BCD00954820 /* ActivityService.swift in Sources */,
+				81B9E33826D28BCB00954820 /* PetService.swift in Sources */,
+				81B9E33B26D28BD200954820 /* Pet+CoreDataClass.swift in Sources */,
+				81B9E34026D28E6500954820 /* URL+storeUrl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		81B9E2F526D2490100954820 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81B9E2E426D248FF00954820 /* PuppySleepTrackerWidgetsExtension */;
+			targetProxy = 81B9E2F426D2490100954820 /* PBXContainerItemProxy */;
+		};
+		81B9E32B26D28A6C00954820 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81B9E31126D28A6B00954820 /* PuppySleepTrackerIntents */;
+			targetProxy = 81B9E32A26D28A6C00954820 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8173895826C40E32003A6722 /* Debug */ = {
@@ -504,8 +776,10 @@
 		8173895B26C40E32003A6722 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
@@ -526,8 +800,10 @@
 		8173895C26C40E32003A6722 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
@@ -594,6 +870,100 @@
 			};
 			name = Release;
 		};
+		81B9E2F826D2490100954820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTrackerWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
+				INFOPLIST_FILE = PuppySleepTrackerWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.PuppySleepTracker.PuppySleepTrackerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81B9E2F926D2490100954820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTrackerWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
+				INFOPLIST_FILE = PuppySleepTrackerWidgets/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.PuppySleepTracker.PuppySleepTrackerWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		81B9E33126D28A6C00954820 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTrackerIntents/PuppySleepTrackerIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
+				INFOPLIST_FILE = PuppySleepTrackerIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.PuppySleepTracker.PuppySleepTrackerIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		81B9E33226D28A6C00954820 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PuppySleepTrackerIntents/PuppySleepTrackerIntents.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Y9C574C9M;
+				INFOPLIST_FILE = PuppySleepTrackerIntents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hotky.PuppySleepTracker.PuppySleepTrackerIntents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -620,6 +990,24 @@
 			buildConfigurations = (
 				8173895E26C40E32003A6722 /* Debug */,
 				8173895F26C40E32003A6722 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81B9E2FA26D2490100954820 /* Build configuration list for PBXNativeTarget "PuppySleepTrackerWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B9E2F826D2490100954820 /* Debug */,
+				81B9E2F926D2490100954820 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		81B9E33026D28A6C00954820 /* Build configuration list for PBXNativeTarget "PuppySleepTrackerIntents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				81B9E33126D28A6C00954820 /* Debug */,
+				81B9E33226D28A6C00954820 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

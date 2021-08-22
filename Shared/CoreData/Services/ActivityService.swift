@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import os.log
 
 struct ActivityService {
     
@@ -38,6 +39,21 @@ struct ActivityService {
             
         } catch let error as NSError {
             print("Error fetching subFavorite \(error)")
+            return nil
+        }
+    }
+    
+    func getActiveActivity(type: String) -> Activity? {
+        let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "activityType == %@ AND endDate == nil", type)
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first
+            
+        } catch let error as NSError {
+            print("Error fetching subFavorite \(error)")
+            os_log("Error fetching subFavorite \(error.localizedDescription)")
             return nil
         }
     }
