@@ -11,13 +11,11 @@ struct PetActivityView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     
-//    var activities: [Activity]
     var activitiesRequest : FetchRequest<Activity>
     var activities : FetchedResults<Activity>{activitiesRequest.wrappedValue}
     var pet: Pet
     
     init(pet: Pet) {
-//        self.activities = Array(activities as? Set<Activity> ?? [])
         self.pet = pet
         self.activitiesRequest = FetchRequest(entity: Activity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Activity.date, ascending: false)], predicate: NSPredicate(format: "pet == %@", pet))
     }
@@ -41,7 +39,6 @@ struct PetActivityView: View {
                 .buttonStyle(RoundedButton(isActive: isWalkActive()))
 
             }.padding(.vertical)
-//            ForEach(Array(pet.activities as? Set<Activity> ?? []), id: \.self){ activity in
             ForEach(activities){ activity in
                 ActivityRow(activity: activity)
             }.onDelete(perform: { indexSet in

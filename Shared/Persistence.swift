@@ -42,10 +42,16 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "PuppySleepTracker")
+        
+        var persistentStoreDescription = container.persistentStoreDescriptions.first
+        
         if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            persistentStoreDescription?.url = URL(fileURLWithPath: "/dev/null")
         }
-
+        
+        persistentStoreDescription?.setOption(true as NSNumber, forKey: "NSMigratePersistentStoresAutomaticallyOption")
+        persistentStoreDescription?.setOption(true as NSNumber, forKey: "NSInferMappingModelAutomaticallyOption")
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
