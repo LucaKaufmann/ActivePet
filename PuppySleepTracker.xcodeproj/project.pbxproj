@@ -84,6 +84,7 @@
 		81B9E33F26D28C9F00954820 /* IntentPet+Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */; };
 		81B9E34026D28E6500954820 /* URL+storeUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E30526D2562A00954820 /* URL+storeUrl.swift */; };
 		81B9E34126D28F4400954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */; };
+		81B9E34226D2963600954820 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		81D6A85026C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
 		81D6A85126C90563002E238B /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A84F26C90563002E238B /* ActivityService.swift */; };
 		81D6A85426C91080002E238B /* ActivityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D6A85326C91080002E238B /* ActivityRow.swift */; };
@@ -638,6 +639,7 @@
 				81B9E33426D28B0900954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
 				81B9E33C26D28BD400954820 /* Activity+CoreDataClass.swift in Sources */,
 				81B9E31726D28A6B00954820 /* IntentHandler.swift in Sources */,
+				81B9E34226D2963600954820 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				81B9E33F26D28C9F00954820 /* IntentPet+Pet.swift in Sources */,
 				81B9E33926D28BCD00954820 /* ActivityService.swift in Sources */,
 				81B9E33826D28BCB00954820 /* PetService.swift in Sources */,
@@ -879,7 +881,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = PuppySleepTrackerWidgets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -903,7 +905,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = PuppySleepTrackerWidgets/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -926,7 +928,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = PuppySleepTrackerIntents/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -948,7 +950,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				INFOPLIST_FILE = PuppySleepTrackerIntents/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -26,12 +26,18 @@ struct Provider: IntentTimelineProvider {
         let petService = PetService.init(context: context)
         let activityService = ActivityService.init(context: context)
         var activity: Activity? = nil
+        var pet: Pet?
         
-        if let activePet = petService.getActivePet() {
-            if let activeActivity = activityService.getActiveActivityFor(pet: activePet, type: "sleep") {
+        if let intentPet = configuration.pet {
+            pet = petService.getEntityFor(name: intentPet.name ?? "" )
+        } else {
+            pet = petService.getActivePet()
+        }
+        
+        if let p = pet {
+            if let activeActivity = activityService.getActiveActivityFor(pet: p, type: "sleep") {
                 activity = activeActivity
             }
-
         }
                 
         let entry = ActivityEntry(date: Date(), configuration: configuration, activity: activity)
@@ -54,16 +60,27 @@ struct PuppySleepTrackerWidgetsEntryView : View {
         ZStack {
             
             if let activity = entry.activity {
-                RadialGradient(gradient: Gradient(colors: [Color("WidgetNightGradientLight"), Color("WidgetNightGradientDark")]), center: .bottom, startRadius: 50, endRadius: 250)
+                RadialGradient(gradient: Gradient(colors: [Color("WidgetNightGradientLight"), Color("WidgetNightGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
                 VStack {
-                    Text(activity.emojiForType())
+                    HStack {
+                        Text(activity.emojiForType())
+                        Text(entry.configuration.pet?.name ?? "")
+                    }
+                    Divider()
                     Text("\(activity.formattedStartDate) - 💤")
-                }
+                }.padding()
             } else {
-                RadialGradient(gradient: Gradient(colors: [Color("WidgetDayGradientLight"), Color("WidgetDayGradientDark")]), center: .bottom, startRadius: 50, endRadius: 250)
-                Text("Start sleep")
+                RadialGradient(gradient: Gradient(colors: [Color("WidgetDayGradientLight"), Color("WidgetDayGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
+                VStack {
+                    HStack {
+//                        Text(entry.configuration.pet?.e ?? "")
+                        Text(entry.configuration.pet?.name ?? "")
+                    }
+                    Divider()
+                    Text("Nap time! 💤")
+                }.padding()
             }
-        }
+        }.widgetURL(URL(string: "puppywidget://\(entry.configuration.pet?.name ?? "")"))
     }
 }
 

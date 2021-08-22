@@ -31,13 +31,13 @@ class IntentHandler: INExtension, SleepWidgetIntentHandling {
     }
     
     func providePetOptionsCollection(for intent: SleepWidgetIntent, with completion: @escaping (INObjectCollection<IntentPet>?, Error?) -> Void) {
-//        let context = PersistenceController.shared.container.viewContext
-//        let petService = PetService(context: context)
-//        let pets = petService.getPets()
+        let context = PersistenceController.shared.container.viewContext
+        let petService = PetService(context: context)
+        let pets = petService.getPets()
         
         let objectCollection = INObjectCollection(sections: [
-            INObjectSection(title: "Pets", items: [IntentPet(identifier: "Zelda", display: "Zelda")])
-//            INObjectSection(title: "Pets", items: pets.map { IntentPet(pet: $0) })
+//            INObjectSection(title: "Pets", items: [IntentPet(identifier: "Zelda", display: "Zelda")])
+            INObjectSection(title: "Pets", items: pets.map { IntentPet(pet: $0) })
         ])
         completion(objectCollection, nil)
     }

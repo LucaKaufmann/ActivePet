@@ -7,6 +7,8 @@
 
 import Foundation
 import CoreData
+import os.log
+
 
 struct PetService {
     
@@ -34,6 +36,7 @@ struct PetService {
             return result
         } catch let error as NSError {
             print("Error fetching pets \(error)")
+            os_log("Error fetching pets \(error.localizedDescription)")
             return []
         }
     }

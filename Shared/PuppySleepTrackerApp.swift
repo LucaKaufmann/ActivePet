@@ -20,10 +20,20 @@ struct PuppySleepTrackerApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onOpenURL { url in
+                    if let petName = url.host {
+                        let petService = PetService(context: persistenceController.container.viewContext)
+                        let activityService = ActivityService(context: persistenceController.container.viewContext)
+                        
+                        if let pet = petService.getEntityFor(name: petName) {
+                            activityService.toggleActivity(type: "sleep", forPet: pet)
+                        }
+                    }
+                }
         }.onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {
             case .active:
-                WidgetCenter.shared.reloadAllTimelines()
+                
 
                 if !isDBMigrated() {
                     migrateCoreData()
@@ -31,7 +41,7 @@ struct PuppySleepTrackerApp: App {
             case .background:
                 print("App background")
             case .inactive:
-                print("App inactive")
+                WidgetCenter.shared.reloadAllTimelines()
             @unknown default:
                 break
             }

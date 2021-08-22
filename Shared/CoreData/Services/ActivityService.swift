@@ -57,6 +57,25 @@ struct ActivityService {
             return nil
         }
     }
+    
+    func toggleActivity(type: String, forPet pet: Pet) {
+        if let activity = getActiveActivityFor(pet: pet, type: type) {
+            activity.endDate = Date()
+        } else {
+            let activity = create(type: "sleep", date: Date())
+            activity.pet = pet
+        }
+        
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("Error saving pubFavorite \(error)")
+        }
+    }
+    
+    func endActivity(type: String, forPet pet: Pet) {
+        
+    }
 }
 
 
