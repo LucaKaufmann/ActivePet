@@ -34,7 +34,7 @@ struct ActivityRow: View {
                                 ActivitySpinnerView().frame(width: 15, height: 15)
                             }
                         }
-                        if activity.isActive() {
+                        if activity.isActive() && !activity.isFault {
                             TimerView(isTimerRunning: true, startTime: activity.date)
 //                            Text(formatter.string(from: interval) ?? "")
 //                                .font(Font.system(size: 12, design: .monospaced))

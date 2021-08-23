@@ -9,7 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var appState: AppState
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Pet.name, ascending: true)],
@@ -58,6 +60,15 @@ struct ContentView: View {
             .navigationTitle("Pet")
             .sheet(isPresented: $showPetSheet) {
                 PetSheetView(viewModel: PetViewModel(), context: viewContext)
+            }
+            .actionSheet(isPresented: $appState.showActionSheet) {
+                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(activityActive(appState.activity) ? "End \(appState.activity)?" : "Start \(appState.activity)?"), buttons: [
+                                .default(Text(activityActive(appState.activity) ? "End" : "Start")) {
+                                    let activityService = ActivityService(context: viewContext)
+                                    activityService.toggleActivity(type: appState.activity, forPet: pet.first!)
+                                },
+                                .destructive(Text("Cancel")) { print("No") }
+                ])
             }
             .toolbar {
                 Menu("Pets") {
@@ -119,6 +130,16 @@ struct ContentView: View {
         case .dog:
             return "🐶"
         }
+    }
+    
+    private func activityActive(_ type: String) -> Bool {
+        let activityService = ActivityService(context: viewContext)
+        
+        if let pet = pet.first {
+            return activityService.getActiveActivityFor(pet: pet, type: type) != nil
+        }
+        
+        return false
     }
 }
 

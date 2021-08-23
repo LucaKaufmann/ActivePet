@@ -9,24 +9,34 @@ import SwiftUI
 import CoreData
 import WidgetKit
 
+class AppState: ObservableObject {
+    @Published var showActionSheet: Bool = false
+    @Published var pet: Pet?
+    @Published var activity: String = ""
+}
+
 @main
 struct PuppySleepTrackerApp: App {
     
     @Environment(\.scenePhase) var scenePhase
     
     let persistenceController = PersistenceController.shared
+    let appState = AppState()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(appState)
                 .onOpenURL { url in
                     if let petName = url.host {
                         let petService = PetService(context: persistenceController.container.viewContext)
-                        let activityService = ActivityService(context: persistenceController.container.viewContext)
                         
                         if let pet = petService.getEntityFor(name: petName) {
-                            activityService.toggleActivity(type: "sleep", forPet: pet)
+                            petService.activatePet(pet)
+                            appState.pet = pet
+                            appState.showActionSheet = true
+                            appState.activity = "sleep"
                         }
                     }
                 }
