@@ -90,8 +90,65 @@ struct ActivityService {
         }
     }
     
-    func endActivity(type: String, forPet pet: Pet) {
+    func activityDurationForDay(_ date: Date, type: String, pet: Pet) -> String {
         
+        // Get the current calendar with local time zone
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        let dateFrom = calendar.startOfDay(for: date)
+
+        // Get today's beginning & end
+        guard let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom) else {
+            return "Date to invalid"
+        }
+        
+        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
+
+        // Set predicate as date being today's date
+        let startFromPredicate = NSPredicate(format: "%@ <= %K", dateFrom as NSDate, #keyPath(Activity.date))
+        let startToPredicate = NSPredicate(format: "%K <= %@", #keyPath(Activity.date), dateTo as NSDate)
+        let startDatePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [startFromPredicate, startToPredicate])
+        
+        let endFromPredicate = NSPredicate(format: "%@ <= %K", dateFrom as NSDate, #keyPath(Activity.endDate))
+        let endToPredicate = NSPredicate(format: "%K <= %@", #keyPath(Activity.endDate), dateTo as NSDate)
+        let endDatePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [endFromPredicate, endToPredicate])
+
+        let datePredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [startDatePredicate, endDatePredicate])
+        
+        let petPredicate = NSPredicate(format: "pet == %@", pet)
+        
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, petPredicate])
+        
+        let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+        fetchRequest.predicate = compoundPredicate
+
+        do {
+            let result = try context.fetch(fetchRequest)
+            
+            var combinedInterval: TimeInterval = 0
+            
+            for activity in result {
+                var startDate = activity.date
+                var endDate = activity.endDate ?? Date()
+                
+                if startDate < dateFrom {
+                    startDate = dateFrom
+                }
+                
+                if endDate > dateTo {
+                    endDate = dateTo
+                }
+                
+                combinedInterval += endDate.timeIntervalSince(startDate)
+            }
+            
+            return combinedInterval.stringFromTimeInterval()
+            
+        } catch let error as NSError {
+            print("Error fetching subFavorite \(error)")
+            return ""
+        }
     }
 }
 

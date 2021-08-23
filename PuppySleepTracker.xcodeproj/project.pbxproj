@@ -35,6 +35,11 @@
 		8172D95826D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
 		8172D95926D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
 		8172D95A26D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
+		8172D95C26D3E5F200670B1A /* TimeInterval+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */; };
+		8172D95D26D3E5F200670B1A /* TimeInterval+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */; };
+		8172D95E26D3E5F200670B1A /* TimeInterval+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */; };
+		8172D95F26D3E64D00670B1A /* TimeInterval+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */; };
+		8172D96326D3E73800670B1A /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D96026D3E73800670B1A /* SmallWidgetView.swift */; };
 		8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */; };
@@ -145,6 +150,8 @@
 		81353A7A26C7F65400C1D804 /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
 		8144717A26C8DB5100CCFA99 /* PetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivityView.swift; sourceTree = "<group>"; };
 		8172D95626D3D41300670B1A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+String.swift"; sourceTree = "<group>"; };
+		8172D96026D3E73800670B1A /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
 		8173893926C40E30003A6722 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySleepTrackerApp.swift; sourceTree = "<group>"; };
 		8173893B26C40E30003A6722 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -365,6 +372,7 @@
 				81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */,
 				81B9E2EF26D2490100954820 /* Assets.xcassets */,
 				81B9E2F126D2490100954820 /* Info.plist */,
+				8172D96026D3E73800670B1A /* SmallWidgetView.swift */,
 			);
 			path = PuppySleepTrackerWidgets;
 			sourceTree = "<group>";
@@ -374,6 +382,7 @@
 			children = (
 				81B9E30526D2562A00954820 /* URL+storeUrl.swift */,
 				81B9E30926D282C900954820 /* OSLog.swift */,
+				8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -566,6 +575,7 @@
 			files = (
 				8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				81D6A85426C91080002E238B /* ActivityRow.swift in Sources */,
+				8172D95C26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				8173895426C40E32003A6722 /* Persistence.swift in Sources */,
 				8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */,
@@ -600,6 +610,7 @@
 			files = (
 				8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				81D6A85526C91080002E238B /* ActivityRow.swift in Sources */,
+				8172D95D26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				81B9E30B26D282F200954820 /* OSLog.swift in Sources */,
 				8173895526C40E32003A6722 /* Persistence.swift in Sources */,
 				81B9E30726D2566A00954820 /* URL+storeUrl.swift in Sources */,
@@ -640,7 +651,9 @@
 				81B9E30026D24FD500954820 /* Pet+CoreDataProperties.swift in Sources */,
 				81B9E30C26D282F200954820 /* OSLog.swift in Sources */,
 				81B9E2FF26D24F9400954820 /* Persistence.swift in Sources */,
+				8172D96326D3E73800670B1A /* SmallWidgetView.swift in Sources */,
 				81B9E33726D28BC900954820 /* BaseService.swift in Sources */,
+				8172D95E26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				81B9E30826D2566C00954820 /* URL+storeUrl.swift in Sources */,
 				81B9E2FC26D2496F00954820 /* PetService.swift in Sources */,
 				81B9E2FB26D2496C00954820 /* ActivityService.swift in Sources */,
@@ -662,6 +675,7 @@
 				81B9E33C26D28BD400954820 /* Activity+CoreDataClass.swift in Sources */,
 				81B9E31726D28A6B00954820 /* IntentHandler.swift in Sources */,
 				81B9E34226D2963600954820 /* PuppySleepTracker.xcdatamodeld in Sources */,
+				8172D95F26D3E64D00670B1A /* TimeInterval+String.swift in Sources */,
 				81B9E33F26D28C9F00954820 /* IntentPet+Pet.swift in Sources */,
 				81B9E33926D28BCD00954820 /* ActivityService.swift in Sources */,
 				81B9E33826D28BCB00954820 /* PetService.swift in Sources */,

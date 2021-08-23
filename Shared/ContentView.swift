@@ -46,6 +46,7 @@ struct ContentView: View {
                             let petService = PetService(context: viewContext)
                             petService.delete(pet)
                         }.foregroundColor(.red)
+                        Text("Time sleeping today: \(durationForActivity("sleep"))")
                     } else {
                         Text("None selected")
                     }
@@ -131,6 +132,14 @@ struct ContentView: View {
         }
         
         return false
+    }
+    
+    private func durationForActivity(_ type: String) -> String {
+        guard let pet = pet.first else {
+            return ""
+        }
+        let activityService = ActivityService(context: viewContext)
+        return activityService.activityDurationForDay(Date(), type: type, pet: pet)
     }
 }
 
