@@ -123,15 +123,6 @@ struct ContentView: View {
         }
     }
     
-    private func emojiForAnimalType(_ type: AnimalType) -> String {
-        switch type {
-        case .cat:
-            return "🐱"
-        case .dog:
-            return "🐶"
-        }
-    }
-    
     private func activityActive(_ type: String) -> Bool {
         let activityService = ActivityService(context: viewContext)
         

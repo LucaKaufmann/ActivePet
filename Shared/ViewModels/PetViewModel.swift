@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum AnimalType: Int {
-    case dog, cat
-}
-
 class PetViewModel: ObservableObject {
     @Published var pet: Pet? {
         didSet {

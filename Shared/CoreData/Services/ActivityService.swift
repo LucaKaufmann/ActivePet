@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import os.log
+import Intents
 
 struct ActivityService {
     
@@ -70,6 +71,22 @@ struct ActivityService {
             try context.save()
         } catch let error as NSError {
             print("Error saving pubFavorite \(error)")
+        }
+        
+        let intent = SleepWidgetIntent()
+        let intentPet = IntentPet(identifier: pet.name, display: pet.name)
+        intentPet.name = pet.name
+        intent.pet = intentPet
+        let interaction = INInteraction(intent: intent, response: nil)
+
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error.description)")
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
         }
     }
     

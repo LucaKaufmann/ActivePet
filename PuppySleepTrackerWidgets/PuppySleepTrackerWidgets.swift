@@ -62,22 +62,29 @@ struct PuppySleepTrackerWidgetsEntryView : View {
             if let activity = entry.activity {
                 RadialGradient(gradient: Gradient(colors: [Color("WidgetNightGradientLight"), Color("WidgetNightGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
                 VStack {
-                    HStack {
+                    HStack(spacing: 16)  {
                         Text(activity.emojiForType())
                         Text(entry.configuration.pet?.name ?? "")
                     }
                     Divider()
-                    Text("\(activity.formattedStartDate) - 💤")
+                    HStack(spacing: 16) {
+                        Text("💤")
+                        Text("\(activity.formattedStartDate)")
+                    }
                 }.padding()
             } else {
                 RadialGradient(gradient: Gradient(colors: [Color("WidgetDayGradientLight"), Color("WidgetDayGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
                 VStack {
                     HStack {
-//                        Text(entry.configuration.pet?.e ?? "")
+                        Text(emojiForAnimalType(AnimalType(rawValue: Int(truncating: entry.configuration.pet?.type ?? 0)) ?? .dog))
                         Text(entry.configuration.pet?.name ?? "")
                     }
                     Divider()
-                    Text("Nap time! 💤")
+                    HStack(spacing: 8) {
+                        Text("💤")
+                        Text("Tap to nap!").font(.caption)
+                    }
+                    
                 }.padding()
             }
         }.widgetURL(URL(string: "puppywidget://\(entry.configuration.pet?.name ?? "")"))

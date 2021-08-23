@@ -65,13 +65,8 @@ struct PetActivityView: View {
     }
     
     private func setActivity(_ type: String) {
-        if let activity = activeActivityForType(type) {
-            activity.endDate = Date()
-        } else {
-            let activityService = ActivityService(context: viewContext)
-            let newActivity = activityService.create(type: type, date: Date())
-            newActivity.pet = pet
-        }
+        let activityService = ActivityService(context: viewContext)
+        activityService.toggleActivity(type: type, forPet: pet)
         
         try? viewContext.save()
     }

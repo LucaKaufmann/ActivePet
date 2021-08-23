@@ -29,6 +29,12 @@
 		81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A7A26C7F65400C1D804 /* PetViewModel.swift */; };
 		8144717B26C8DB5100CCFA99 /* PetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144717A26C8DB5100CCFA99 /* PetActivityView.swift */; };
 		8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8144717A26C8DB5100CCFA99 /* PetActivityView.swift */; };
+		8172D95326D3D11D00670B1A /* IntentPet+Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */; };
+		8172D95426D3D11E00670B1A /* IntentPet+Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */; };
+		8172D95726D3D41300670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
+		8172D95826D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
+		8172D95926D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
+		8172D95A26D3D41E00670B1A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8172D95626D3D41300670B1A /* Utility.swift */; };
 		8173894E26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173894F26C40E32003A6722 /* PuppySleepTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8173893826C40E30003A6722 /* PuppySleepTracker.xcdatamodeld */; };
 		8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */; };
@@ -138,6 +144,7 @@
 		81353A7726C7F4D300C1D804 /* LabelledFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledFormView.swift; sourceTree = "<group>"; };
 		81353A7A26C7F65400C1D804 /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
 		8144717A26C8DB5100CCFA99 /* PetActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivityView.swift; sourceTree = "<group>"; };
+		8172D95626D3D41300670B1A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		8173893926C40E30003A6722 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		8173893A26C40E30003A6722 /* PuppySleepTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySleepTrackerApp.swift; sourceTree = "<group>"; };
 		8173893B26C40E30003A6722 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -262,6 +269,14 @@
 			path = ViewComponents;
 			sourceTree = "<group>";
 		};
+		8172D95526D3D40C00670B1A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8172D95626D3D41300670B1A /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		8173893226C40E30003A6722 = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +295,7 @@
 		8173893726C40E30003A6722 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8172D95526D3D40C00670B1A /* Utility */,
 				81B9E30426D2561C00954820 /* Extensions */,
 				81353A7526C7C68700C1D804 /* ViewModels */,
 				81353A7126C7C36500C1D804 /* Views */,
@@ -561,8 +577,10 @@
 				8173897426C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
 				810356AF26CBE1DC00370CB7 /* ActivityEditView.swift in Sources */,
 				81B9E30626D2562A00954820 /* URL+storeUrl.swift in Sources */,
+				8172D95326D3D11D00670B1A /* IntentPet+Pet.swift in Sources */,
 				8173897626C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
 				81D6A85E26CAC5D4002E238B /* RoundedButton.swift in Sources */,
+				8172D95726D3D41300670B1A /* Utility.swift in Sources */,
 				810356B226CBE23600370CB7 /* ActivityViewModel.swift in Sources */,
 				810356B526CBE40700370CB7 /* FormTextField.swift in Sources */,
 				81353A7326C7C37900C1D804 /* PetSheetView.swift in Sources */,
@@ -593,12 +611,14 @@
 				8173897526C40F5B003A6722 /* Activity+CoreDataClass.swift in Sources */,
 				810356B026CBE1DC00370CB7 /* ActivityEditView.swift in Sources */,
 				8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */,
+				8172D95426D3D11E00670B1A /* IntentPet+Pet.swift in Sources */,
 				81D6A85F26CAC5D4002E238B /* RoundedButton.swift in Sources */,
 				810356B326CBE23600370CB7 /* ActivityViewModel.swift in Sources */,
 				81353A7426C7C37900C1D804 /* PetSheetView.swift in Sources */,
 				8173895326C40E32003A6722 /* ContentView.swift in Sources */,
 				8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
 				81D6A85126C90563002E238B /* ActivityService.swift in Sources */,
+				8172D95826D3D41E00670B1A /* Utility.swift in Sources */,
 				8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
 				81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
 				81353A7026C7C1A900C1D804 /* BaseService.swift in Sources */,
@@ -612,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8172D95926D3D41E00670B1A /* Utility.swift in Sources */,
 				81B9E2F226D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
 				81B9E30D26D283FE00954820 /* PuppySleepTracker.xcdatamodeld in Sources */,
 				81B9E2FD26D24C0900954820 /* Activity+CoreDataClass.swift in Sources */,
@@ -632,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8172D95A26D3D41E00670B1A /* Utility.swift in Sources */,
 				81B9E33626D28BC600954820 /* BaseService.swift in Sources */,
 				81B9E33A26D28BD000954820 /* Pet+CoreDataProperties.swift in Sources */,
 				81B9E33D26D28BD600954820 /* Activity+CoreDataProperties.swift in Sources */,

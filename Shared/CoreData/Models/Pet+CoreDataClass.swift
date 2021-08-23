@@ -13,3 +13,7 @@ import CoreData
 public class Pet: NSManagedObject {
 
 }
+
+enum AnimalType: Int {
+    case dog, cat
+}

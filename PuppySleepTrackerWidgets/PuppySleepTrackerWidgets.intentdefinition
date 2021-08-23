@@ -23,12 +23,20 @@
 			<string>tVvJ9c</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
-			<key>INIntentIneligibleForSuggestions</key>
-			<true/>
 			<key>INIntentLastParameterTag</key>
 			<integer>5</integer>
 			<key>INIntentName</key>
 			<string>SleepWidget</string>
+			<key>INIntentParameterCombinations</key>
+			<dict>
+				<key></key>
+				<dict>
+					<key>INIntentParameterCombinationIsPrimary</key>
+					<true/>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+				</dict>
+			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
@@ -131,7 +139,7 @@
 			<key>INTypeDisplayNameID</key>
 			<string>jL5LPf</string>
 			<key>INTypeLastPropertyTag</key>
-			<integer>100</integer>
+			<integer>102</integer>
 			<key>INTypeName</key>
 			<string>IntentPet</string>
 			<key>INTypeProperties</key>
@@ -199,6 +207,20 @@
 					<integer>100</integer>
 					<key>INTypePropertyType</key>
 					<string>String</string>
+				</dict>
+				<dict>
+					<key>INTypePropertyDisplayName</key>
+					<string>Type</string>
+					<key>INTypePropertyDisplayNameID</key>
+					<string>YMeH42</string>
+					<key>INTypePropertyDisplayPriority</key>
+					<integer>6</integer>
+					<key>INTypePropertyName</key>
+					<string>type</string>
+					<key>INTypePropertyTag</key>
+					<integer>102</integer>
+					<key>INTypePropertyType</key>
+					<string>Integer</string>
 				</dict>
 			</array>
 		</dict>
