@@ -63,13 +63,7 @@ struct ContentView: View {
                 PetSheetView(viewModel: PetViewModel(), context: viewContext)
             }
             .actionSheet(isPresented: $appState.showActionSheet) {
-                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(activityActive(appState.activity) ? "End \(appState.activity)?" : "Start \(appState.activity)?"), buttons: [
-                                .default(Text(activityActive(appState.activity) ? "End" : "Start")) {
-                                    let activityService = ActivityService(context: viewContext)
-                                    activityService.toggleActivity(type: appState.activity, forPet: pet.first!)
-                                },
-                                .destructive(Text("Cancel")) { print("No") }
-                ])
+                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(activityActive(appState.activity) ? "End \(appState.activity)?" : "Start new activity?"), buttons: activitySheetButtons())
             }
             .toolbar {
                 Menu("Pets") {
@@ -122,6 +116,41 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
+    }
+    
+    private func activitySheetButtons() -> [ActionSheet.Button] {
+        let activityService = ActivityService(context: viewContext)
+        var buttons = [ActionSheet.Button]()
+        if let pet = pet.first {
+            if activityService.getActiveActivity(pet: pet) != nil {
+                buttons = [
+                    .default(Text("End")) {
+                        let activityService = ActivityService(context: viewContext)
+                        activityService.toggleActivity(type: appState.activity, forPet: pet)
+                    },
+                    .destructive(Text("Cancel")) { print("No") }
+                ]
+            } else {
+                buttons = [
+                    .default(Text("Start sleep")) {
+                        let activityService = ActivityService(context: viewContext)
+                        activityService.toggleActivity(type: "sleep", forPet: pet)
+                    },
+                    .default(Text("Start play")) {
+                        let activityService = ActivityService(context: viewContext)
+                        activityService.toggleActivity(type: "play", forPet: pet)
+                    },
+                    .default(Text("Start walk")) {
+                        let activityService = ActivityService(context: viewContext)
+                        activityService.toggleActivity(type: "walk", forPet: pet)
+                    },
+                    .destructive(Text("Cancel")) { print("No") }
+                ]
+            }
+        }
+        
+        return buttons
+//        if activityActive(appState.activity)
     }
     
     private func activityActive(_ type: String) -> Bool {

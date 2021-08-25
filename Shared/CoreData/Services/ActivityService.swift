@@ -59,11 +59,26 @@ struct ActivityService {
         }
     }
     
+    func getActiveActivity(pet: Pet) -> Activity? {
+        let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "pet == %@ AND endDate == nil", pet)
+        
+        do {
+            let result = try context.fetch(fetchRequest)
+            return result.first
+            
+        } catch let error as NSError {
+            print("Error fetching subFavorite \(error)")
+            os_log("Error fetching subFavorite \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
     func toggleActivity(type: String, forPet pet: Pet) {
-        if let activity = getActiveActivityFor(pet: pet, type: type) {
+        if let activity = getActiveActivity(pet: pet) {
             activity.endDate = Date()
         } else {
-            let activity = create(type: "sleep", date: Date())
+            let activity = create(type: type, date: Date())
             activity.pet = pet
         }
         
@@ -118,7 +133,9 @@ struct ActivityService {
         
         let petPredicate = NSPredicate(format: "pet == %@", pet)
         
-        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, petPredicate])
+        let typePredicate = NSPredicate(format: "activityType == %@", type)
+        
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate, petPredicate, typePredicate])
         
         let fetchRequest: NSFetchRequest<Activity> = Activity.fetchRequest()
         fetchRequest.predicate = compoundPredicate

@@ -11,11 +11,30 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> ActivityEntry {
-        ActivityEntry(date: Date(), configuration: SleepWidgetIntent(), activity: nil, duration: "")
+        let persistenceController = PersistenceController.preview
+        var activity: Activity?
+        let intent = SleepWidgetIntent()
+        let petService = PetService(context: persistenceController.container.viewContext)
+        if let pet = petService.getActivePet() {
+            intent.pet = IntentPet(pet: pet)
+            let activityService = ActivityService(context: persistenceController.container.viewContext)
+            activity = activityService.getActiveActivity(pet: pet)
+        }
+        return ActivityEntry(date: Date(), configuration: intent, activity: activity)
     }
 
     func getSnapshot(for configuration: SleepWidgetIntent, in context: Context, completion: @escaping (ActivityEntry) -> ()) {
-        let entry = ActivityEntry(date: Date(), configuration: configuration, activity: nil, duration: "")
+        let persistenceController = PersistenceController.preview
+        var activity: Activity?
+        let intent = SleepWidgetIntent()
+        let petService = PetService(context: persistenceController.container.viewContext)
+        if let pet = petService.getActivePet() {
+            intent.pet = IntentPet(pet: pet)
+            let activityService = ActivityService(context: persistenceController.container.viewContext)
+            activity = activityService.getActiveActivity(pet: pet)
+        }
+        let entry = ActivityEntry(date: Date(), configuration: intent, activity: activity)
+        
         completion(entry)
     }
 
@@ -27,7 +46,6 @@ struct Provider: IntentTimelineProvider {
         let activityService = ActivityService.init(context: context)
         var activity: Activity? = nil
         var pet: Pet?
-        var duration: String = ""
         
         if let intentPet = configuration.pet {
             pet = petService.getEntityFor(name: intentPet.name ?? "" )
@@ -36,13 +54,12 @@ struct Provider: IntentTimelineProvider {
         }
         
         if let p = pet {
-            if let activeActivity = activityService.getActiveActivityFor(pet: p, type: "sleep") {
+            if let activeActivity = activityService.getActiveActivity(pet: p) {
                 activity = activeActivity
             }
-            duration = activityService.activityDurationForDay(Date(), type: "sleep", pet: p)
         }
                 
-        let entry = ActivityEntry(date: Date(), configuration: configuration, activity: activity, duration: duration)
+        let entry = ActivityEntry(date: Date(), configuration: configuration, activity: activity)
 
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
@@ -53,42 +70,40 @@ struct ActivityEntry: TimelineEntry {
     let date: Date
     let configuration: SleepWidgetIntent
     let activity: Activity?
-    let duration: String
 }
 
 struct PuppySleepTrackerWidgetsEntryView : View {
     
     @Environment(\.widgetFamily) var widgetFamily
-    
+    @ObservedObject var viewModel: WidgetViewModel
     var entry: Provider.Entry
+    
+    init(entry: ActivityEntry) {
+        self.entry = entry
+        self.viewModel = WidgetViewModel(entry: entry)
+    }
 
     var body: some View {
         ZStack {
             if let activity = entry.activity {
-                RadialGradient(gradient: Gradient(colors: [Color("WidgetNightGradientLight"), Color("WidgetNightGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
+                GradientBackground(activity: activity)
                 HStack {
-                    SmallWidgetView(entry: entry, widgetActivity: activity)
+                    SmallWidgetView(viewModel: viewModel)
                     if widgetFamily != .systemSmall {
-                        Spacer()
-                        VStack(spacing: 14) {
-                            Text("Today:")
-                            Text(" \(entry.duration)")
-                        }
+                        Divider()
+                        MediumWidgetView(viewModel: viewModel)
                         .frame(width: 125)
                         .padding(.trailing)
                         Spacer()
                     }
                 }
             } else {
-                RadialGradient(gradient: Gradient(colors: [Color("WidgetDayGradientLight"), Color("WidgetDayGradientDark")]), center: .bottom, startRadius: 40, endRadius: 200)
+                GradientBackground()
                 HStack {
-                    SmallWidgetView(entry: entry, widgetActivity: nil)
+                    SmallWidgetView(viewModel: viewModel)
                     if widgetFamily != .systemSmall {
-                        Spacer()
-                        VStack(spacing: 14) {
-                            Text("Today:")
-                            Text("💤 \(entry.duration)")
-                        }
+                        Divider()
+                        MediumWidgetView(viewModel: viewModel)
                         .frame(width: 125)
                         .padding(.trailing)
                         Spacer()
@@ -119,7 +134,7 @@ struct PuppySleepTrackerWidgets_Previews: PreviewProvider {
         let activity = activityService.create(type: "sleep", date: Date())
         activity.endDate = Date()
         
-        return PuppySleepTrackerWidgetsEntryView(entry: ActivityEntry(date: Date(), configuration: SleepWidgetIntent(), activity: activity, duration: ""))
+        return PuppySleepTrackerWidgetsEntryView(entry: ActivityEntry(date: Date(), configuration: SleepWidgetIntent(), activity: activity))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

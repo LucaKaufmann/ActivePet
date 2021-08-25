@@ -58,6 +58,11 @@
 		8173897726C40F5B003A6722 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */; };
 		8173897B26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
 		8173897C26C411D6003A6722 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */; };
+		8174781F26D4B53D00504D47 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174781E26D4B53D00504D47 /* GradientBackground.swift */; };
+		8174784626D52DFC00504D47 /* PuppyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174784526D52DFC00504D47 /* PuppyWidgetView.swift */; };
+		8174784826D556BC00504D47 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174784726D556BC00504D47 /* MediumWidgetView.swift */; };
+		8174784B26D5572100504D47 /* WidgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174784A26D5572100504D47 /* WidgetViewModel.swift */; };
+		8174784C26D60CB000504D47 /* IntentPet+Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E33E26D28C9F00954820 /* IntentPet+Pet.swift */; };
 		81B9E2E826D248FF00954820 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9E2E726D248FF00954820 /* WidgetKit.framework */; };
 		81B9E2EA26D248FF00954820 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B9E2E926D248FF00954820 /* SwiftUI.framework */; };
 		81B9E2ED26D248FF00954820 /* PuppySleepTrackerWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E2EC26D248FF00954820 /* PuppySleepTrackerWidgets.swift */; };
@@ -166,6 +171,10 @@
 		8173896F26C40F5B003A6722 /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8173897026C40F5B003A6722 /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8173897A26C411D6003A6722 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8174781E26D4B53D00504D47 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		8174784526D52DFC00504D47 /* PuppyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppyWidgetView.swift; sourceTree = "<group>"; };
+		8174784726D556BC00504D47 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		8174784A26D5572100504D47 /* WidgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewModel.swift; sourceTree = "<group>"; };
 		81B9E2E526D248FF00954820 /* PuppySleepTrackerWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PuppySleepTrackerWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B9E2E726D248FF00954820 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		81B9E2E926D248FF00954820 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -354,6 +363,25 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		8174781D26D4B50800504D47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8172D96026D3E73800670B1A /* SmallWidgetView.swift */,
+				8174781E26D4B53D00504D47 /* GradientBackground.swift */,
+				8174784526D52DFC00504D47 /* PuppyWidgetView.swift */,
+				8174784726D556BC00504D47 /* MediumWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8174784926D5570E00504D47 /* ObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				8174784A26D5572100504D47 /* WidgetViewModel.swift */,
+			);
+			path = ObservableObject;
+			sourceTree = "<group>";
+		};
 		81B9E2E626D248FF00954820 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,11 +396,12 @@
 		81B9E2EB26D248FF00954820 /* PuppySleepTrackerWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				8174784926D5570E00504D47 /* ObservableObject */,
+				8174781D26D4B50800504D47 /* Views */,
 				81B9E2EC26D248FF00954820 /* PuppySleepTrackerWidgets.swift */,
 				81B9E2EE26D248FF00954820 /* PuppySleepTrackerWidgets.intentdefinition */,
 				81B9E2EF26D2490100954820 /* Assets.xcassets */,
 				81B9E2F126D2490100954820 /* Info.plist */,
-				8172D96026D3E73800670B1A /* SmallWidgetView.swift */,
 			);
 			path = PuppySleepTrackerWidgets;
 			sourceTree = "<group>";
@@ -643,9 +672,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8174784B26D5572100504D47 /* WidgetViewModel.swift in Sources */,
 				8172D95926D3D41E00670B1A /* Utility.swift in Sources */,
 				81B9E2F226D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
+				8174784C26D60CB000504D47 /* IntentPet+Pet.swift in Sources */,
 				81B9E30D26D283FE00954820 /* PuppySleepTracker.xcdatamodeld in Sources */,
+				8174784626D52DFC00504D47 /* PuppyWidgetView.swift in Sources */,
 				81B9E2FD26D24C0900954820 /* Activity+CoreDataClass.swift in Sources */,
 				81B9E2FE26D24C0C00954820 /* Activity+CoreDataProperties.swift in Sources */,
 				81B9E30026D24FD500954820 /* Pet+CoreDataProperties.swift in Sources */,
@@ -656,7 +688,9 @@
 				8172D95E26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				81B9E30826D2566C00954820 /* URL+storeUrl.swift in Sources */,
 				81B9E2FC26D2496F00954820 /* PetService.swift in Sources */,
+				8174781F26D4B53D00504D47 /* GradientBackground.swift in Sources */,
 				81B9E2FB26D2496C00954820 /* ActivityService.swift in Sources */,
+				8174784826D556BC00504D47 /* MediumWidgetView.swift in Sources */,
 				81B9E2ED26D248FF00954820 /* PuppySleepTrackerWidgets.swift in Sources */,
 				81B9E30126D24FD700954820 /* Pet+CoreDataClass.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ struct PersistenceController {
         let pet = Pet(context: viewContext)
         pet.name = "Zelda"
         pet.animalType = 0
+        pet.active = true
         
         let activity1 = Activity(context: viewContext)
         activity1.activityType = "sleep"
@@ -23,8 +24,9 @@ struct PersistenceController {
         activity1.pet = pet
         
         let activity2 = Activity(context: viewContext)
-        activity2.activityType = "poop"
+        activity2.activityType = "play"
         activity2.date = Date()
+        activity2.endDate = Date()
         activity2.pet = pet
         
         do {
