@@ -18,16 +18,33 @@ struct PersistenceController {
         pet.animalType = 0
         pet.active = true
         
+        let calendar = Calendar.current
+        var dateComponent = DateComponents()
+        dateComponent.minute = -1*Int.random(in: 0...59)
+        dateComponent.hour = -1*Int.random(in: 0...6)
+        
         let activity1 = Activity(context: viewContext)
         activity1.activityType = "sleep"
-        activity1.date = Date()
+        activity1.date = calendar.date(byAdding: dateComponent, to: Date()) ?? Date()
         activity1.pet = pet
+        
+        dateComponent.minute = -1*Int.random(in: 0...59)
+        dateComponent.hour = -1*Int.random(in: 0...1)
         
         let activity2 = Activity(context: viewContext)
         activity2.activityType = "play"
-        activity2.date = Date()
+        activity2.date = calendar.date(byAdding: dateComponent, to: Date()) ?? Date()
         activity2.endDate = Date()
         activity2.pet = pet
+        
+        dateComponent.minute = -1*Int.random(in: 0...59)
+        dateComponent.hour = -1*Int.random(in: 0...2)
+        
+        let activity3 = Activity(context: viewContext)
+        activity3.activityType = "walk"
+        activity3.date = calendar.date(byAdding: dateComponent, to: Date()) ?? Date()
+        activity3.endDate = Date()
+        activity3.pet = pet
         
         do {
             try viewContext.save()

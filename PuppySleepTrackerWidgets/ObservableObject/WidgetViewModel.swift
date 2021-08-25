@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import CoreData
 
 class WidgetViewModel: ObservableObject {
     
-    let viewContext = PersistenceController.shared.container.viewContext
+    let viewContext: NSManagedObjectContext
     
     @Published var activity: Activity?
     @Published var pet: Pet?
@@ -19,6 +20,7 @@ class WidgetViewModel: ObservableObject {
     
     init(entry: ActivityEntry) {
         self.activity = entry.activity
+        self.viewContext = entry.context
         
         let petService = PetService(context: viewContext)
         if let intentPet = entry.configuration.pet {
@@ -31,16 +33,6 @@ class WidgetViewModel: ObservableObject {
             self.playDuration = activityService.activityDurationForDay(Date(), type: "play", pet: p)
             self.walkDuration = activityService.activityDurationForDay(Date(), type: "walk", pet: p)
         }
-    }
-    
-    init(pet: Pet) {
-        let activityService = ActivityService(context: viewContext)
-        
-        self.activity = activityService.getActiveActivity(pet: pet)
-        
-        self.sleepDuration = activityService.activityDurationForDay(Date(), type: "sleep", pet: pet)
-        self.playDuration = activityService.activityDurationForDay(Date(), type: "play", pet: pet)
-        self.walkDuration = activityService.activityDurationForDay(Date(), type: "walk", pet: pet)
     }
     
 }

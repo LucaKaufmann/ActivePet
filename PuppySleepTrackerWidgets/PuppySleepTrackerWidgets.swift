@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import CoreData
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> ActivityEntry {
@@ -20,7 +21,7 @@ struct Provider: IntentTimelineProvider {
             let activityService = ActivityService(context: persistenceController.container.viewContext)
             activity = activityService.getActiveActivity(pet: pet)
         }
-        return ActivityEntry(date: Date(), configuration: intent, activity: activity)
+        return ActivityEntry(date: Date(), configuration: intent, activity: activity, context: persistenceController.container.viewContext)
     }
 
     func getSnapshot(for configuration: SleepWidgetIntent, in context: Context, completion: @escaping (ActivityEntry) -> ()) {
@@ -33,7 +34,7 @@ struct Provider: IntentTimelineProvider {
             let activityService = ActivityService(context: persistenceController.container.viewContext)
             activity = activityService.getActiveActivity(pet: pet)
         }
-        let entry = ActivityEntry(date: Date(), configuration: intent, activity: activity)
+        let entry = ActivityEntry(date: Date(), configuration: intent, activity: activity, context: persistenceController.container.viewContext)
         
         completion(entry)
     }
@@ -59,7 +60,7 @@ struct Provider: IntentTimelineProvider {
             }
         }
                 
-        let entry = ActivityEntry(date: Date(), configuration: configuration, activity: activity)
+        let entry = ActivityEntry(date: Date(), configuration: configuration, activity: activity, context: context)
 
         let timeline = Timeline(entries: [entry], policy: .atEnd)
         completion(timeline)
@@ -70,6 +71,7 @@ struct ActivityEntry: TimelineEntry {
     let date: Date
     let configuration: SleepWidgetIntent
     let activity: Activity?
+    let context: NSManagedObjectContext
 }
 
 struct PuppySleepTrackerWidgetsEntryView : View {
@@ -122,6 +124,7 @@ struct PuppySleepTrackerWidgets: Widget {
         IntentConfiguration(kind: kind, intent: SleepWidgetIntent.self, provider: Provider()) { entry in
             PuppySleepTrackerWidgetsEntryView(entry: entry)
         }
+        .supportedFamilies([.systemSmall, .systemMedium])
         .configurationDisplayName("Puppy Sleep Widget")
         .description("Widget tracking your pets sleep")
     }
@@ -134,7 +137,7 @@ struct PuppySleepTrackerWidgets_Previews: PreviewProvider {
         let activity = activityService.create(type: "sleep", date: Date())
         activity.endDate = Date()
         
-        return PuppySleepTrackerWidgetsEntryView(entry: ActivityEntry(date: Date(), configuration: SleepWidgetIntent(), activity: activity))
+        return PuppySleepTrackerWidgetsEntryView(entry: ActivityEntry(date: Date(), configuration: SleepWidgetIntent(), activity: activity, context: PersistenceController.preview.container.viewContext))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
