@@ -15,6 +15,30 @@ struct PetActivityView: View {
     var activities : FetchedResults<Activity>{activitiesRequest.wrappedValue}
     var pet: Pet
     
+    var groupedActivities: [Date: [Activity]] {
+        let calendar = Calendar.current
+        var grouped = [Date: [Activity]]()
+        for activity in activities {
+            let normalizedDate = calendar.startOfDay(for: activity.date)
+            if let dateActivities = grouped[normalizedDate] {
+                print("Append to existing section \(activity)")
+                var activitiesForDay = dateActivities
+                activitiesForDay.append(activity)
+                
+                grouped[normalizedDate] = activitiesForDay.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+            } else {
+                print("Create new section for \(activity)")
+                grouped[normalizedDate] = [activity]
+            }
+        }
+        
+        return grouped
+    }
+    
+    var headers: [Date] {
+            groupedActivities.map({ $0.key }).sorted(by: { $0.compare($1) == .orderedDescending })
+        }
+    
     init(pet: Pet) {
         self.pet = pet
         self.activitiesRequest = FetchRequest(entity: Activity.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Activity.date, ascending: false)], predicate: NSPredicate(format: "pet == %@", pet))
@@ -39,11 +63,20 @@ struct PetActivityView: View {
                 .buttonStyle(RoundedButton(isActive: isWalkActive()))
 
             }.padding(.vertical)
-            ForEach(activities){ activity in
-                ActivityRow(activity: activity)
-            }.onDelete(perform: { indexSet in
-                deleteItems(offsets: indexSet)
-            })
+            
+            ForEach(headers, id: \.self) { header in
+                Section(header: Text(header, style: .date)) {
+                    ForEach(groupedActivities[header]!) { activity in
+                        ActivityRow(activity: activity)
+                    }
+                }
+            }
+            
+//            ForEach(activities){ activity in
+//                ActivityRow(activity: activity)
+//            }.onDelete(perform: { indexSet in
+//                deleteItems(offsets: indexSet)
+//            })
         }
     }
     
@@ -96,6 +129,27 @@ struct PetActivityView: View {
             return nil
         }
     }
+    
+//    private func groupedActivities() -> [Date: [Activity]] {
+//        let calendar = Calendar.current
+//        var grouped = [Date: [Activity]]()
+//        for activity in activities {
+//            let normalizedDate = calendar.startOfDay(for: activity.date)
+//            if let dateActivities = grouped[normalizedDate] {
+//                print("Append to existing section \(activity)")
+//                var activitiesForDay = dateActivities
+//                activitiesForDay.append(activity)
+//                activitiesForDay.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
+//
+//                grouped[normalizedDate] = activitiesForDay
+//            } else {
+//                print("Create new section for \(activity)")
+//                grouped[normalizedDate] = [activity]
+//            }
+//        }
+//
+//        return grouped
+//    }
 }
 
 struct PetActivityView_Previews: PreviewProvider {
