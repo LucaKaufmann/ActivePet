@@ -49,18 +49,7 @@ public class Activity: NSManagedObject {
     }
     
     func emojiForType() -> String {
-        switch self.activityType {
-        case "sleep":
-            return "🛏"
-        case "poop":
-            return "💩"
-        case "play":
-            return "🧸"
-        case "walk":
-            return "🦮"
-        default:
-            return "🐱"
-        }
+        return emojiForActivityType(self.activityType)
     }
     
 //    func formattedStartDate() -> String {

@@ -55,3 +55,18 @@ func colorForActivityType(_ type: String, active: Bool, colorType: ColorType) ->
     }
     
 }
+
+func emojiForActivityType(_ type: String) -> String {
+    switch type {
+    case "sleep":
+        return "🛏"
+    case "poop":
+        return "💩"
+    case "play":
+        return "🧸"
+    case "walk":
+        return "🦮"
+    default:
+        return "🐱"
+    }
+}

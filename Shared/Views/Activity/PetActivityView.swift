@@ -65,12 +65,14 @@ struct PetActivityView: View {
             }.padding(.vertical)
             
             ForEach(headers, id: \.self) { header in
-                Section(header: Text(header, style: .date)) {
+                Section(header: PetActivityViewSectionHeader(viewContext: viewContext, date: header, pet: pet)) {
                     ForEach(groupedActivities[header]!) { activity in
                         ActivityRow(activity: activity)
                     }
                 }
-            }
+            }.onDelete(perform: { indexSet in
+                deleteItems(offsets: indexSet)
+            })
             
 //            ForEach(activities){ activity in
 //                ActivityRow(activity: activity)
@@ -81,18 +83,29 @@ struct PetActivityView: View {
     }
     
     private func deleteItems(offsets: IndexSet) {
+
         withAnimation {
             viewContext.perform {
-                offsets.map { activities[$0] }.forEach(viewContext.delete)
-
-                do {
-                    try viewContext.save()
-                } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                
+                for row in offsets {
+                    
+                    if let activitiesToDelete = groupedActivities[headers[row]] {
+    //                    offsets.map { activities[$0] }.forEach(viewContext.delete)
+                        activitiesToDelete.forEach(viewContext.delete)
+                        
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            // Replace this implementation with code to handle the error appropriately.
+                            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                            let nsError = error as NSError
+                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                        }
+                    }
                 }
+                
+
+                
             }
         }
     }

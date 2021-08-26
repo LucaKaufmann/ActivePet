@@ -30,6 +30,7 @@ struct ContentView: View {
 //    private var activities: FetchedResults<Activity>
     
     @State var showPetSheet: Bool = false
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -42,11 +43,17 @@ struct ContentView: View {
                             Text(pet.name)
                         }
                         Button("Delete") {
-                            print("Deleting pet \(pet.name)")
-                            let petService = PetService(context: viewContext)
-                            petService.delete(pet)
-                        }.foregroundColor(.red)
-                        Text("Time sleeping today: \(durationForActivity("sleep"))")
+                            showingAlert = true
+           
+                        }
+                        .foregroundColor(.red)
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Delete \(pet.name)?"), message: Text("This will delete \(pet.name) and all connected activities."), primaryButton: .destructive(Text("Delete")) {
+                                print("Delete pet")
+                                let petService = PetService(context: viewContext)
+                                petService.delete(pet)
+                            }, secondaryButton: .cancel())
+                        }
                     } else {
                         Text("None selected")
                     }
