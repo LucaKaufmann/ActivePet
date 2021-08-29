@@ -70,9 +70,10 @@ struct PetActivityView: View {
                         ActivityRow(activity: activity)
                     }
                 }
-            }.onDelete(perform: { indexSet in
-                deleteItems(offsets: indexSet)
-            })
+            }
+//            .onDelete(perform: { indexSet in
+//                deleteItems(offsets: indexSet)
+//            })
             
 //            ForEach(activities){ activity in
 //                ActivityRow(activity: activity)
@@ -86,23 +87,23 @@ struct PetActivityView: View {
 
         withAnimation {
             viewContext.perform {
-                
-                for row in offsets {
-                    
-                    if let activitiesToDelete = groupedActivities[headers[row]] {
-    //                    offsets.map { activities[$0] }.forEach(viewContext.delete)
-                        activitiesToDelete.forEach(viewContext.delete)
-                        
-                        do {
-                            try viewContext.save()
-                        } catch {
-                            // Replace this implementation with code to handle the error appropriately.
-                            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                            let nsError = error as NSError
-                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                        }
-                    }
-                }
+                print("IndexSet to delete \(offsets)")
+//                for row in offsets {
+//
+//                    if let activitiesToDelete = groupedActivities[headers[row]] {
+//    //                    offsets.map { activities[$0] }.forEach(viewContext.delete)
+//                        activitiesToDelete.forEach(viewContext.delete)
+//
+//                        do {
+//                            try viewContext.save()
+//                        } catch {
+//                            // Replace this implementation with code to handle the error appropriately.
+//                            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                            let nsError = error as NSError
+//                            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//                        }
+//                    }
+//                }
                 
 
                 

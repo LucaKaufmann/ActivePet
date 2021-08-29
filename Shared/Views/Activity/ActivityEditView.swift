@@ -34,6 +34,11 @@ struct ActivityEditView: View {
                 }
             }
             Section {
+                Button("Delete") {
+                    delete()
+                }.foregroundColor(.red)
+            }
+            Section {
                 Button("Save") {
                     save()
                 }
@@ -51,6 +56,14 @@ struct ActivityEditView: View {
         activity.activityType = viewModel.activityType
         
         try? viewContext.save()
+    }
+    
+    func delete() {
+        guard let activity = viewModel.activity else {
+            return
+        }
+        
+        try? viewContext.delete(activity)
     }
 }
 

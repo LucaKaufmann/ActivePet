@@ -30,6 +30,8 @@ struct ContentView: View {
 //    private var activities: FetchedResults<Activity>
     
     @State var showPetSheet: Bool = false
+    @State var showAboutSheet: Bool = false
+
     @State private var showingAlert = false
     
     var body: some View {
@@ -69,25 +71,38 @@ struct ContentView: View {
             .sheet(isPresented: $showPetSheet) {
                 PetSheetView(viewModel: PetViewModel(), context: viewContext)
             }
+            .sheet(isPresented: $showAboutSheet) {
+                AboutView()
+            }
             .actionSheet(isPresented: $appState.showActionSheet) {
-                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(activityActive(appState.activity) ? "End \(appState.activity)?" : "Start new activity?"), buttons: activitySheetButtons())
+                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(titleForPet(pet.first)), buttons: activitySheetButtons())
             }
             .toolbar {
-                Menu("Pets") {
-                    ForEach(pets) { pet in
-                        Button(action: {
-                            print("Activate pet \(pet.name)")
-                            let petService = PetService(context: viewContext)
-                            petService.activatePet(pet)
-                        }, label: {
-                            if pet.active { Image(systemName: "checkmark") }
-                            Text(pet.name)
-                        })
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button("About") {
+                        showAboutSheet.toggle()
                     }
-                    Button(action: {
-                        self.showPetSheet = true
-                    }) {
-                        Label("Add Pet", systemImage: "plus")
+//                    NavigationLink(destination: AboutView()) {
+//                        Text("About")
+//                    }
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Menu("Pets") {
+                        ForEach(pets) { pet in
+                            Button(action: {
+                                print("Activate pet \(pet.name)")
+                                let petService = PetService(context: viewContext)
+                                petService.activatePet(pet)
+                            }, label: {
+                                if pet.active { Image(systemName: "checkmark") }
+                                Text(pet.name)
+                            })
+                        }
+                        Button(action: {
+                            self.showPetSheet = true
+                        }) {
+                            Label("Add Pet", systemImage: "plus")
+                        }
                     }
                 }
             }
@@ -122,6 +137,18 @@ struct ContentView: View {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
+        }
+    }
+    
+    private func titleForPet(_ pet: Pet?) -> String {
+        guard let pet = pet else {
+            return "Start new activity?"
+        }
+        let activityService = ActivityService(context: viewContext)
+        if let activity = activityService.getActiveActivity(pet: pet) {
+            return "End \(activity.activityType)"
+        } else {
+            return "Start new activity?"
         }
     }
     

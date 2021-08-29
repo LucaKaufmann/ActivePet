@@ -21,6 +21,12 @@
 		810DDBE326D7CCFF003CC7BA /* PetActivityViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBE126D7CCFF003CC7BA /* PetActivityViewSectionHeader.swift */; };
 		810DDBE426D7D4BC003CC7BA /* WidgetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B9E2EF26D2490100954820 /* WidgetAssets.xcassets */; };
 		810DDBE526D7D4BC003CC7BA /* WidgetAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B9E2EF26D2490100954820 /* WidgetAssets.xcassets */; };
+		810DDBE726DBB5CD003CC7BA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBE626DBB5CD003CC7BA /* AboutView.swift */; };
+		810DDBE826DBB5CD003CC7BA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBE626DBB5CD003CC7BA /* AboutView.swift */; };
+		810DDBEA26DBB62F003CC7BA /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBE926DBB62F003CC7BA /* AppHeaderView.swift */; };
+		810DDBEB26DBB62F003CC7BA /* AppHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBE926DBB62F003CC7BA /* AppHeaderView.swift */; };
+		810DDBED26DBB678003CC7BA /* Bundle+utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBEC26DBB678003CC7BA /* Bundle+utility.swift */; };
+		810DDBEE26DBB678003CC7BA /* Bundle+utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810DDBEC26DBB678003CC7BA /* Bundle+utility.swift */; };
 		81353A6C26C7C18300C1D804 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
 		81353A6D26C7C18300C1D804 /* PetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6B26C7C18300C1D804 /* PetService.swift */; };
 		81353A6F26C7C1A900C1D804 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81353A6E26C7C1A800C1D804 /* BaseService.swift */; };
@@ -153,6 +159,9 @@
 		810356BA26CCCFD800370CB7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		810356BD26CD239400370CB7 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		810DDBE126D7CCFF003CC7BA /* PetActivityViewSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetActivityViewSectionHeader.swift; sourceTree = "<group>"; };
+		810DDBE626DBB5CD003CC7BA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		810DDBE926DBB62F003CC7BA /* AppHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeaderView.swift; sourceTree = "<group>"; };
+		810DDBEC26DBB678003CC7BA /* Bundle+utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+utility.swift"; sourceTree = "<group>"; };
 		81353A6B26C7C18300C1D804 /* PetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetService.swift; sourceTree = "<group>"; };
 		81353A6E26C7C1A800C1D804 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		81353A7226C7C37900C1D804 /* PetSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSheetView.swift; sourceTree = "<group>"; };
@@ -266,6 +275,8 @@
 				81D6A85226C91074002E238B /* Activity */,
 				81353A7626C7F4C600C1D804 /* ViewComponents */,
 				81353A7226C7C37900C1D804 /* PetSheetView.swift */,
+				810DDBE626DBB5CD003CC7BA /* AboutView.swift */,
+				810DDBE926DBB62F003CC7BA /* AppHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +428,7 @@
 				81B9E30526D2562A00954820 /* URL+storeUrl.swift */,
 				81B9E30926D282C900954820 /* OSLog.swift */,
 				8172D95B26D3E5F200670B1A /* TimeInterval+String.swift */,
+				810DDBEC26DBB678003CC7BA /* Bundle+utility.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -614,9 +626,11 @@
 				81D6A85426C91080002E238B /* ActivityRow.swift in Sources */,
 				8172D95C26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				8173895426C40E32003A6722 /* Persistence.swift in Sources */,
+				810DDBE726DBB5CD003CC7BA /* AboutView.swift in Sources */,
 				8173895026C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
 				81353A7B26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6C26C7C18300C1D804 /* PetService.swift in Sources */,
+				810DDBED26DBB678003CC7BA /* Bundle+utility.swift in Sources */,
 				81B9E2F326D2490100954820 /* PuppySleepTrackerWidgets.intentdefinition in Sources */,
 				810356BB26CCCFD800370CB7 /* TimerView.swift in Sources */,
 				810356B826CCCA7E00370CB7 /* ActivitySpinnerView.swift in Sources */,
@@ -632,6 +646,7 @@
 				810356B226CBE23600370CB7 /* ActivityViewModel.swift in Sources */,
 				810356B526CBE40700370CB7 /* FormTextField.swift in Sources */,
 				81353A7326C7C37900C1D804 /* PetSheetView.swift in Sources */,
+				810DDBEA26DBB62F003CC7BA /* AppHeaderView.swift in Sources */,
 				8173895226C40E32003A6722 /* ContentView.swift in Sources */,
 				8144717B26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
 				81D6A85026C90563002E238B /* ActivityService.swift in Sources */,
@@ -650,9 +665,11 @@
 				81D6A85526C91080002E238B /* ActivityRow.swift in Sources */,
 				8172D95D26D3E5F200670B1A /* TimeInterval+String.swift in Sources */,
 				81B9E30B26D282F200954820 /* OSLog.swift in Sources */,
+				810DDBE826DBB5CD003CC7BA /* AboutView.swift in Sources */,
 				8173895526C40E32003A6722 /* Persistence.swift in Sources */,
 				81B9E30726D2566A00954820 /* URL+storeUrl.swift in Sources */,
 				8173895126C40E32003A6722 /* PuppySleepTrackerApp.swift in Sources */,
+				810DDBEE26DBB678003CC7BA /* Bundle+utility.swift in Sources */,
 				81353A7C26C7F65400C1D804 /* PetViewModel.swift in Sources */,
 				81353A6D26C7C18300C1D804 /* PetService.swift in Sources */,
 				810356BC26CCCFD800370CB7 /* TimerView.swift in Sources */,
@@ -668,6 +685,7 @@
 				8173895326C40E32003A6722 /* ContentView.swift in Sources */,
 				8144717C26C8DB5100CCFA99 /* PetActivityView.swift in Sources */,
 				81D6A85126C90563002E238B /* ActivityService.swift in Sources */,
+				810DDBEB26DBB62F003CC7BA /* AppHeaderView.swift in Sources */,
 				8172D95826D3D41E00670B1A /* Utility.swift in Sources */,
 				8173897326C40F5B003A6722 /* Pet+CoreDataClass.swift in Sources */,
 				81353A7926C7F4D300C1D804 /* LabelledFormView.swift in Sources */,
@@ -863,10 +881,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PuppySleepTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -887,10 +906,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PuppySleepTracker.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6Y9C574C9M;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

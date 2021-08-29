@@ -33,8 +33,25 @@
 				<dict>
 					<key>INIntentParameterCombinationIsPrimary</key>
 					<true/>
+					<key>INIntentParameterCombinationSubtitle</key>
+					<string>Display amount of time spent on activities, launch activities right from the widget</string>
+					<key>INIntentParameterCombinationSubtitleID</key>
+					<string>kwb1el</string>
 					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
 					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Widget keeping track of a pets activity</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>oloflL</string>
+				</dict>
+				<key>pet</key>
+				<dict>
+					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
+					<true/>
+					<key>INIntentParameterCombinationTitle</key>
+					<string>Widget keeping track of a ${pet}'s activity</string>
+					<key>INIntentParameterCombinationTitleID</key>
+					<string>JUKPA0</string>
 				</dict>
 			</dict>
 			<key>INIntentParameters</key>
