@@ -23,43 +23,16 @@
 			<string>tVvJ9c</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
+			<key>INIntentIneligibleForSuggestions</key>
+			<true/>
 			<key>INIntentLastParameterTag</key>
 			<integer>5</integer>
 			<key>INIntentName</key>
 			<string>SleepWidget</string>
-			<key>INIntentParameterCombinations</key>
-			<dict>
-				<key></key>
-				<dict>
-					<key>INIntentParameterCombinationIsPrimary</key>
-					<true/>
-					<key>INIntentParameterCombinationSubtitle</key>
-					<string>Display amount of time spent on activities, launch activities right from the widget</string>
-					<key>INIntentParameterCombinationSubtitleID</key>
-					<string>kwb1el</string>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Widget keeping track of a pets activity</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>oloflL</string>
-				</dict>
-				<key>pet</key>
-				<dict>
-					<key>INIntentParameterCombinationSupportsBackgroundExecution</key>
-					<true/>
-					<key>INIntentParameterCombinationTitle</key>
-					<string>Widget keeping track of a ${pet}'s activity</string>
-					<key>INIntentParameterCombinationTitleID</key>
-					<string>JUKPA0</string>
-				</dict>
-			</dict>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
 					<key>INIntentParameterConfigurable</key>
-					<true/>
-					<key>INIntentParameterCustomDisambiguation</key>
 					<true/>
 					<key>INIntentParameterDisplayName</key>
 					<string>Pet</string>
@@ -113,8 +86,6 @@
 						</dict>
 					</array>
 					<key>INIntentParameterSupportsDynamicEnumeration</key>
-					<true/>
-					<key>INIntentParameterSupportsResolution</key>
 					<true/>
 					<key>INIntentParameterTag</key>
 					<integer>5</integer>

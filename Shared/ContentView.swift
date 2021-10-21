@@ -71,12 +71,12 @@ struct ContentView: View {
             .sheet(isPresented: $showPetSheet) {
                 PetSheetView(viewModel: PetViewModel(), context: viewContext)
             }
-//            .sheet(isPresented: $showAboutSheet) {
-//                AboutView()
-//            }
-//            .actionSheet(isPresented: $appState.showActionSheet) {
-//                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(titleForPet(pet.first)), buttons: activitySheetButtons())
-//            }
+            .sheet(isPresented: $showAboutSheet) {
+                AboutView()
+            }
+            .actionSheet(isPresented: $appState.showActionSheet) {
+                ActionSheet(title: Text(pet.first?.name ?? "Pet"), message: Text(titleForPet(pet.first)), buttons: activitySheetButtons())
+            }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button("About") {
